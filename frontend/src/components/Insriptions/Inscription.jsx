@@ -1,17 +1,13 @@
 import "./Inscription.css";
 import { useState } from "react";
 
+
 export default function Inscription() {
-    const [formData, setFormData] = useState({
-        username: "",
-        email: "",
-        password: "",
-    });
 
 
     return (
         <div className="inscription-container">
-            <h1>Connection Utilisatur</h1>
+            <h1>Connection Utilisateur</h1>
             <p>Veuillez entrer vos informations de connexion.</p>
             <form action="submit" method="post">
                 <label for="username">Nom d'utilisateur:</label><br />

@@ -78,10 +78,12 @@ export default function Map({ imageSize = [2000, 1000], imageUrl = image, polygo
 
 
     return (
+        <>
+            <div className="map-container">
+                <p>Voici la Map interactive du college Montmorency : </p>
+                <div id="map"></div>
+            </div>
+        </>
 
-        <div className="map-container">
-            <h2>Map Component</h2>
-            <div id="map"></div>
-        </div>
     );
 }
