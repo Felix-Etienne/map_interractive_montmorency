@@ -7,12 +7,15 @@ export default function Header() {
     return (
         <>
             <header className="header">
-                <h1 className="header-title">Map Interactive Collège Montmorency</h1>
-                <div>
+                <div className="header-titre">
+                    <Link to="/">
+                        <h1 className="header-title">Map Interactive Collège Montmorency</h1>
+                    </Link>
                     <Link to="/inscription">
-                        <button>Inscription</button>
+                        <button className="boutton-inscri">Inscription</button>
                     </Link>
                 </div>
+
             </header>
             <body>
                 <main className="main">
