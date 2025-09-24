@@ -1,0 +1,20 @@
+.inscription-container{
+    background: white;
+    padding: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    text-align: center;
+}
+.form-group{
+    margin-bottom: 15px;
+}
+
+.control input{
+    background-color: white;
+    margin: 10px;
+    color: black;
+}
+.login-form button{
+    margin-top: 10px;
+}
