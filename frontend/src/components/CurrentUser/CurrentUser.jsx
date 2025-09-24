@@ -15,7 +15,7 @@ export default function CurrentUser() {
     }
   }, []);
 
-  if (!username) return <p>Not logged in</p>;
+  if (!username) return <p>Pas connecté</p>;
 
-  return <p>Welcome, {username}!</p>;
+  return <p>Bienvenue, {username}!</p>;
 }
