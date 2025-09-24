@@ -11,12 +11,16 @@ export default function Header() {
                     <Link to="/">
                         <h1 className="header-title">Map Interactive Collège Montmorency</h1>
                     </Link>
-                    <Link to="/inscription">
-                        <button className="boutton-inscri">Inscription</button>
-                    </Link>
-                    <Link to="/connection">
-                        <button className="boutton-inscri">Connection</button>
-                    </Link>
+                    <div className="boutton-inscri">
+                        <Link to="/inscription">
+                            <button>Inscription</button>
+                        </Link>
+
+                        <Link to="/connection">
+                            <button >Connection</button>
+                        </Link>
+                    </div>
+
                 </div>
             </header>
             <main className="main">

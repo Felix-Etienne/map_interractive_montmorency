@@ -24,7 +24,7 @@ export default function Inscription() {
                 try {
                     console.log(data);
                     const response = await fetch(
-                        import.meta.env.VITE_BACKEND_URL + "/api/students",
+                        import.meta.env.VITE_BACKEND_URL + "api/students",
                         {
                             method: "POST",
                             headers: {
@@ -75,30 +75,34 @@ export default function Inscription() {
             <h1>Inscription</h1>
             <p>Veuillez entrer vos informations de connexion :</p>
             <form className="login-form">
-                <div className="control">
-                    <label>Username : </label>
-                    <input
-                        id="user"
-                        value={nom}
-                        onChange={(e) => setNom(e.target.value)}
-                    />
+                <div className="form-group">
+                    <div className="control">
+                        <label>Username : </label>
+                        <input
+                            id="user"
+                            value={nom}
+                            onChange={(e) => setNom(e.target.value)}
+                        />
+                    </div>
+                    <div className="control">
+                        <label>Email : </label>
+                        <input
+                            id="couriel"
+                            value={couriel}
+                            onChange={(e) => setCouriel(e.target.value)}
+                        />
+                    </div>
+                    <div className="control">
+                        <label htmlFor="password">Password : </label>
+                        <input
+                            id="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
                 </div>
-                <div className="control">
-                    <label>Email : </label>
-                    <input
-                        id="couriel"
-                        value={couriel}
-                        onChange={(e) => setCouriel(e.target.value)}
-                    />
-                </div>
-                <div className="control">
-                    <label htmlFor="password">Password : </label>
-                    <input
-                        id="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
+
+
                 <button className="login-button" onClick={authSubmitHandler}>
                     S'inscrire
                 </button>
