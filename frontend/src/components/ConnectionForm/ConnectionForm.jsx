@@ -11,15 +11,16 @@ export default function ConnectionForm() {
     const auth = useContext(AuthContext);
 
     async function authSubmitHandler(event) {
-        if (nom != "" && password != "") {
+        if (couriel != "" && password != "") {
             event.preventDefault();
             const data = {
-                nom: nom,
-                motDePasse: password,
+                email: couriel,
+                password: password,
             };
+            console.log(data);
             try {
                 const response = await fetch(
-                    import.meta.env.VITE_BACKEND_URL + "users/connexion",
+                    import.meta.env.VITE_BACKEND_URL + "api/students/login",
                     {
                         method: "POST",
                         headers: {
@@ -28,6 +29,7 @@ export default function ConnectionForm() {
                         body: JSON.stringify(data),
                     }
                 );
+                console.log(response);
                 const responseData = await response.json();
                 if (!response.ok) {
                     throw new Error(responseData.message || "Une erreur est survenue.");
@@ -40,7 +42,7 @@ export default function ConnectionForm() {
                 );
                 console.error(err);
             } finally {
-
+                navigate("/");
             }
         } else {
             alert("Veuillez remplir tous les champs.");

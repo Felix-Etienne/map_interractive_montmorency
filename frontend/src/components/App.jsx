@@ -22,7 +22,7 @@ const routerLogin = createBrowserRouter([
         element: <Header />,
         errorElement: <ErrorPage />,
         children: [
-            { path: "/login", element: <Navigate to="/" replace /> },
+            { path: "/connection", element: <Navigate to="/" replace /> },
             { path: "/inscription", element: <Navigate to="/" replace /> },
             { path: "", element: <Map /> },
         ],
