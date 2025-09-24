@@ -9,8 +9,10 @@ import {
 
 import { useCallback, useState, useEffect } from "react";
 import Inscription from "./Insriptions/Inscription.jsx";
+import ConnectionForm from "./ConnectionForm/ConnectionForm.jsx";
 import Map from "./Map/Map.jsx";
 import Header from "./Header/Header.jsx";
+import ErrorPage from "../Containers/ErrorPage.jsx";
 import { AuthContext } from "./AuthContext/AuthContext";
 
 
@@ -18,7 +20,7 @@ const routerLogin = createBrowserRouter([
     {
         path: "/",
         element: <Header />,
-        //errorElement: <ErrorPage />,
+        errorElement: <ErrorPage />,
         children: [
             { path: "/login", element: <Navigate to="/" replace /> },
             { path: "/inscription", element: <Navigate to="/" replace /> },
@@ -30,10 +32,11 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Header />,
-        //errorElement: <ErrorPage />,
+        errorElement: <ErrorPage />,
         children: [
             { path: "", element: <Map /> },
             { path: "/inscription", element: <Inscription /> },
+            { path: "/connection", element: <ConnectionForm /> },
         ],
     },
 ]);

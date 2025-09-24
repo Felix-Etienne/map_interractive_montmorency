@@ -14,15 +14,14 @@ export default function Header() {
                     <Link to="/inscription">
                         <button className="boutton-inscri">Inscription</button>
                     </Link>
+                    <Link to="/connection">
+                        <button className="boutton-inscri">Connection</button>
+                    </Link>
                 </div>
-
             </header>
-            <body>
-                <main className="main">
-                    <Outlet />
-                </main>
-            </body>
+            <main className="main">
+                <Outlet />
+            </main>
         </>
-
     );
 }
