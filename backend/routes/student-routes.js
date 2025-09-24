@@ -9,8 +9,9 @@ router.get("/", studentController.getAllStudents);
 router.get("/:id", studentController.getStudentById);
 router.get("/name/:name", studentController.getStudentByUsername);
 
-router.post("/",studentController.createStudent);
-
+router.post("/", studentController.createStudent);
+router.post("/login", studentController.loginStudent);
+router.post("/register", studentController.registerStudent);
 router.put("/:id", studentController.updateStudent);
 
 export default router;
