@@ -2,6 +2,7 @@ import "./Map.css";
 import "https://unpkg.com/leaflet/dist/leaflet.js";
 import image from "../../Images/ImageMap.png";
 import { useEffect } from "react";
+import CurrentUser from "../CurrentUser/CurrentUser"; 
 
 export default function Map({ imageSize = [2000, 1000], imageUrl = image, polygons = [] }) {
 
@@ -81,6 +82,7 @@ export default function Map({ imageSize = [2000, 1000], imageUrl = image, polygo
         <>
             <div className="map-container">
                 <p>Voici la Map interactive du college Montmorency : </p>
+                          <CurrentUser /> {}
                 <div id="map"></div>
             </div>
         </>
