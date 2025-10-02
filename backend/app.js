@@ -51,7 +51,7 @@ app.use("/api/students",studentRoutes);
 // })
 
 // //Error handler
-// app.use(errorHandler);
+app.use(errorHandler);
 
 //Run le serveur
 app.listen(port, () => {
