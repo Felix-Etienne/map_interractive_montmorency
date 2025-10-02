@@ -1,4 +1,4 @@
-#map {
+.map-container {
     height: 90vh;
-    width: 100%;
+    width: 100vh;
 }

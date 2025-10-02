@@ -8,7 +8,7 @@
     left: 0;
     z-index: 10000;
     width: 100%;
-    background-color: rgb(150, 150, 150);
+    background-color: #002768;
 }
 .boutton-inscri button {
     border: none;
@@ -25,9 +25,12 @@
     
 }
 
-h1{
-    color: rgb(0, 0, 0);
+h1 {
+    font-size: 2.5em;
+    color: #24b219;
+    margin-left: 20px;
 }
+
 .main {
   margin-top: 100px;
   padding: 30px;

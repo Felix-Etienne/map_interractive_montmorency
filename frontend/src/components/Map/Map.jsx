@@ -1,77 +1,31 @@
 import "./Map.css";
 import "https://unpkg.com/leaflet/dist/leaflet.js";
-import image from "../../Images/ImageMap.png";
+import image from "../../Images/a7fc6ee5.png";
 import { useEffect } from "react";
 
 export default function Map({ imageSize = [2000, 1000], imageUrl = image, polygons = [] }) {
 
     useEffect(() => {
-        const container = L.DomUtil.get("map");
-        if (container != null) {
-            container._leaflet_id = null;
-        }
+        document.querySelectorAll(".salle").forEach(salle => {
+            salle.addEventListener("click", () => {
+                const id = salle.id;
+                console.log("Salle cliquée :", id);
 
-
-        const [mapWidth, mapHeight] = imageSize;
-
-        const map = L.map("map", {
-            crs: L.CRS.Simple,
-            minZoom: -1,
-            maxZoom: 4,
+                highlightClass(id);
+            });
         });
 
-        // Définir les bornes de l'image
-        var bounds = [
-            [0, 0],
-            [mapHeight, mapWidth],
-        ];
+        function highlightClass(id) {
+            // reset
+            document.querySelectorAll(".salle").forEach(e => {
+                e.setAttribute("fill", "lightblue");
+            });
 
-        // Ajouter l'image du Cégep
-        L.imageOverlay(imageUrl, bounds).addTo(map);
+            if (!id) return;
 
-        // Ajuster la vue pour montrer toute l'image
-        map.fitBounds(bounds);
-
-        var popup = L.popup();
-
-        function onMapClick(e) {
-            popup
-                .setLatLng(e.latlng)
-                .setContent("You clicked the map at " + e.latlng.toString())
-                .openOn(map);
+            let el = document.getElementById(id);
+            if (el) el.setAttribute("fill", "lightgreen");
         }
-
-        map.on("click", onMapClick);
-
-        polygons.forEach(({ coords, label }) => {
-            L.polygon(coords).addTo(map).bindPopup(label);
-        });
-        const classB3381 = L.polygon([
-            [382.89807, 1086],
-            [380.397744, 1258.5],
-            [501.052092, 1256.8125],
-            [500.977047, 1083.375],
-        ]).addTo(map).bindPopup("B-3381");
-
-        const classB3317 = L.polygon([
-            [502.004763, 1083.5],
-            [593.75937, 1083.9375],
-            [595.388662, 1294.625],
-            [504.388599, 1293.625],
-        ]).addTo(map).bindPopup("B-3317");
-
-        const classB3303 = L.polygon([
-            [432.589864, 911.625],
-            [456.976036, 911],
-            [477.968777, 944.25],
-            [593.353813, 945],
-            [594.175613, 1081.8125],
-            [433.213602, 1083.125],
-        ]).addTo(map).bindPopup("B-3303");
-
-        return () => {
-            map.remove();
-        };
     }, []);
 
 
@@ -81,7 +35,28 @@ export default function Map({ imageSize = [2000, 1000], imageUrl = image, polygo
         <>
             <div className="map-container">
                 <p>Voici la Map interactive du college Montmorency : </p>
-                <div id="map"></div>
+                <div>
+                    <svg id="plan" viewBox="0 0 1000 600" width="100%">
+                        <image href={image} x="0" y="0" width="100%" height="600" />
+                        <g>
+                            <rect id="L1760" class="salle" x="455" y="10" width="105" height="135" fill="lightblue" stroke="black" />
+                            <text x="510" y="85" fontSize="20" textAnchor="middle" fill="black">L-1760</text>
+                        </g>
+                        <g>
+                            <rect id="L1762" class="salle" x="345" y="10" width="110" height="135" fill="lightblue" stroke="black" />
+                            <text x="400" y="85" fontSize="20" textAnchor="middle" fill="black">L-1762</text>
+                        </g>
+                        <g>
+                            <rect id="L1758" class="salle" x="560" y="10" width="105" height="135" fill="lightblue" stroke="black" />
+                            <text x="610" y="85" fontSize="20" textAnchor="middle" fill="black">L-1758</text>
+                        </g>
+                        <g>
+                            <rect id="L1756" class="salle" x="560" y="190" width="105" height="140" fill="lightblue" stroke="black" />
+                            <text x="610" y="265" fontSize="20" textAnchor="middle" fill="black">L-1756</text>
+                        </g>
+                        <rect id="sortie" class="exit" x="504" y="500" width="50" height="40" fill="orange" stroke="black" />
+                    </svg>
+                </div>
             </div>
         </>
 
