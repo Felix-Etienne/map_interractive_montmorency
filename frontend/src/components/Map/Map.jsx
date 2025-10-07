@@ -1,5 +1,4 @@
 import "./Map.css";
-import "https://unpkg.com/leaflet/dist/leaflet.js";
 import image from "../../Images/a7fc6ee5.png";
 import { useEffect } from "react";
 
@@ -16,7 +15,6 @@ export default function Map({ imageSize = [2000, 1000], imageUrl = image, polygo
         });
 
         function highlightClass(id) {
-            // reset
             document.querySelectorAll(".salle").forEach(e => {
                 e.setAttribute("fill", "lightblue");
             });
@@ -38,7 +36,7 @@ export default function Map({ imageSize = [2000, 1000], imageUrl = image, polygo
                 <div>
                     <svg id="plan" viewBox="0 0 1000 600" width="100%">
                         <image href={image} x="0" y="0" width="100%" height="600" />
-                        <g>
+                        <g >
                             <rect id="L1760" class="salle" x="455" y="10" width="105" height="135" fill="lightblue" stroke="black" />
                             <text x="510" y="85" fontSize="20" textAnchor="middle" fill="black">L-1760</text>
                         </g>
@@ -57,7 +55,7 @@ export default function Map({ imageSize = [2000, 1000], imageUrl = image, polygo
                         <rect id="sortie" class="exit" x="504" y="500" width="50" height="40" fill="orange" stroke="black" />
                     </svg>
                 </div>
-            </div>
+            </div >
         </>
 
     );
