@@ -1,0 +1,32 @@
+.search-container {
+  width: 400px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.results-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.result-item {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.no-results {
+  color: #888;
+  text-align: center;
+  padding: 6px 0;
+}
