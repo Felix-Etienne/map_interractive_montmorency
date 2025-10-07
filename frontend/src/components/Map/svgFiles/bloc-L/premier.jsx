@@ -7,14 +7,28 @@ export default function Premier() {
     const [tool, setTool] = useState("auto");
     const [value, setValue] = useState(null);
     const [size, setSize] = useState({ width: 1400, height: 1000 });
+    const [hoveredSalle, setHoveredSalle] = useState(null);
+    const [selectedSalle, setSelectedSalle] = useState(null);
+    const [infoBox, setInfoBox] = useState({ visible: false, x: 0, y: 0, id: "" });
 
     useEffect(() => {
         document.querySelectorAll(".salle").forEach(salle => {
-            salle.addEventListener("click", () => {
-                const id = salle.id;
-                console.log("Salle cliquée :", id);
-
+            const id = salle.id;
+            salle.addEventListener("mouseenter", () => {
                 highlightClass(id);
+            });
+            salle.addEventListener("mouseleave", () => {
+                setHoveredSalle(null);
+            });
+            salle.addEventListener("click", (e) => {
+                setSelectedSalle(salle.id);
+                console.log("Salle cliquée :", id);
+                setInfoBox({
+                    visible: true,
+                    x: e.clientX,
+                    y: e.clientY,
+                    id: salle.id
+                });
             });
         });
 
@@ -25,12 +39,15 @@ export default function Premier() {
             });
 
             if (!id) return;
-
             let el = document.getElementById(id);
-            if (el) el.setAttribute("fill", "lightgreen");
-            if (el) el.setAttribute("fill-opacity", "0.5");
+
+            if (el) {
+
+                el.setAttribute("fill", "lightgreen");
+                el.setAttribute("fill-opacity", "0.5");
+            }
         }
-    }, []);
+    }, [hoveredSalle, selectedSalle]);
 
 
     useEffect(() => {
@@ -1358,7 +1375,23 @@ export default function Premier() {
                     </g>
                 </svg>
             </UncontrolledReactSVGPanZoom>
-
+            {infoBox.visible && (
+                <div
+                    style={{
+                        position: "absolute",
+                        left: infoBox.x,
+                        top: infoBox.y,
+                        background: "white",
+                        border: "1px solid #ccc",
+                        padding: "8px",
+                        zIndex: 10
+                    }}
+                >
+                    <strong>Classe : </strong> {infoBox.id}
+                    <br />
+                    <button onClick={() => setInfoBox({ ...infoBox, visible: false })}>Fermer</button>
+                </div>
+            )}
         </div>
 
 
