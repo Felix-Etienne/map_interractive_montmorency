@@ -2,6 +2,7 @@ import "./Map.css";
 import "https://unpkg.com/leaflet/dist/leaflet.js";
 import image from "../../Images/a7fc6ee5.png";
 import { useEffect } from "react";
+import SearchBar from "../SearchBar/SearchBar";
 
 export default function Map({ imageSize = [2000, 1000], imageUrl = image, polygons = [] }) {
 
@@ -34,6 +35,7 @@ export default function Map({ imageSize = [2000, 1000], imageUrl = image, polygo
     return (
         <>
             <div className="map-container">
+                <SearchBar />
                 <p>Voici la Map interactive du college Montmorency : </p>
                 <div>
                     <svg id="plan" viewBox="0 0 1000 600" width="100%">
@@ -53,6 +55,12 @@ export default function Map({ imageSize = [2000, 1000], imageUrl = image, polygo
                         <g>
                             <rect id="L1756" class="salle" x="560" y="190" width="105" height="140" fill="lightblue" stroke="black" />
                             <text x="610" y="265" fontSize="20" textAnchor="middle" fill="black">L-1756</text>
+                        </g>
+                        <g>
+                            <rect id="C1" class="" x="510" y="190" width="40" height="310" fill="lightblue" stroke="black" />
+                        </g>
+                        <g>
+                            <rect id="C1" class="" x="346" y="145" width="320" height="45" fill="lightblue" stroke="black" />
                         </g>
                         <rect id="sortie" class="exit" x="504" y="500" width="50" height="40" fill="orange" stroke="black" />
                     </svg>
