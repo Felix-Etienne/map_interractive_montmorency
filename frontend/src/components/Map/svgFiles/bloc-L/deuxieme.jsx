@@ -1,16 +1,21 @@
 import { useEffect } from "react";
 import { useRef, useState } from "react";
 import { UncontrolledReactSVGPanZoom } from "react-svg-pan-zoom";
+import SearchBar from "../../../SearchBar/SearchBar";
 
-export default function Deuxieme() {
+export default function Deuxieme({ width, height }) {
     const Viewer = useRef(null);
     const [tool, setTool] = useState("auto");
     const [value, setValue] = useState(null);
-    const [size, setSize] = useState({ width: 1400, height: 1000 });
+    const [size, setSize] = useState({ width, height });
     const [hoveredSalle, setHoveredSalle] = useState(null);
     const [selectedSalle, setSelectedSalle] = useState(null);
     const [infoBox, setInfoBox] = useState({ visible: false, x: 0, y: 0, id: "" });
 
+
+    useEffect(() => {
+        setSize({ width, height });
+    }, [width, height]);
 
 
     useEffect(() => {
@@ -66,6 +71,7 @@ export default function Deuxieme() {
 
     return (
         <div>
+            <SearchBar />
             <UncontrolledReactSVGPanZoom
                 ref={Viewer}
                 width={size.width}
@@ -1730,7 +1736,7 @@ export default function Deuxieme() {
             {infoBox.visible && (
                 <div
                     style={{
-                        position: "absolute",
+                        position: "fixed",
                         left: infoBox.x,
                         top: infoBox.y,
                         background: "white",

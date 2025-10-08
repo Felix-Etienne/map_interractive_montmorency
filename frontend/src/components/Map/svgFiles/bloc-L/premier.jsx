@@ -1,19 +1,26 @@
 import { useEffect } from "react";
 import { useRef, useState } from "react";
 import { UncontrolledReactSVGPanZoom } from "react-svg-pan-zoom";
+import SearchBar from "../../../SearchBar/SearchBar";
 
-export default function Premier() {
+export default function Premier({ width, height }) {
     const Viewer = useRef(null);
     const [tool, setTool] = useState("auto");
     const [value, setValue] = useState(null);
-    const [size, setSize] = useState({ width: 1400, height: 1000 });
+    const [size, setSize] = useState({ width, height });
     const [hoveredSalle, setHoveredSalle] = useState(null);
     const [selectedSalle, setSelectedSalle] = useState(null);
     const [infoBox, setInfoBox] = useState({ visible: false, x: 0, y: 0, id: "" });
 
     useEffect(() => {
+        setSize({ width, height });
+    }, [width, height]);
+
+
+    useEffect(() => {
         document.querySelectorAll(".salle").forEach(salle => {
             const id = salle.id;
+            const viewer = Viewer.current;
             salle.addEventListener("mouseenter", () => {
                 highlightClass(id);
             });
@@ -63,6 +70,7 @@ export default function Premier() {
 
     return (
         <div>
+            <SearchBar />
             <UncontrolledReactSVGPanZoom
                 ref={Viewer}
                 width={size.width}
@@ -1378,7 +1386,7 @@ export default function Premier() {
             {infoBox.visible && (
                 <div
                     style={{
-                        position: "absolute",
+                        position: "fixed",
                         left: infoBox.x,
                         top: infoBox.y,
                         background: "white",

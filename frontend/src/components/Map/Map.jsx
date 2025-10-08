@@ -1,24 +1,34 @@
 import "./Map.css";
 import Premier from "./svgFiles/bloc-L/premier.jsx";
 import Deuxieme from "./svgFiles/bloc-L/deuxieme.jsx";
-import { useState } from "react";
-import SearchBar from "../SearchBar/SearchBar";
-
-
+import { useState, useEffect } from 'react';
 
 export default function Map() {
-
     const [level, setLevel] = useState("1");
-    const maps = {
-        1: <Premier />,
-        2: <Deuxieme />,
-    };
+    const [windowSize, setWindowSize] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight
+    });
 
+    useEffect(() => {
+        function handleResize() {
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight
+            });
+        }
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const maps = {
+        1: <Premier width={windowSize.width * 0.5} height={windowSize.height * 0.7} />,
+        2: <Deuxieme width={windowSize.width * 0.5} height={windowSize.height * 0.7} />,
+    };
 
     return (
         <>
             <div className="map-container">
-                <SearchBar />
                 <p>Voici la Map interactive du college Montmorency : </p>
                 <select
                     value={level}
