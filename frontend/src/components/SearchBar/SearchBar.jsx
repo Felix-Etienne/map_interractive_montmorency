@@ -15,18 +15,16 @@ export default function SearchBar() {
 
   const handleSelect = (cls) => {
     setSearchTerm(cls);
-    setShowResults(false); 
+    setShowResults(false);
   };
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
-    setShowResults(true); 
+    setShowResults(true);
   };
 
   return (
     <div className="search-container">
-      <h2>Rechercher classe</h2>
-
       <input
         type="text"
         placeholder="Rechercher une classe"

@@ -41,7 +41,6 @@ export default function Deuxieme({ width, height }) {
 
         function highlightClass(id) {
             document.querySelectorAll(".salle").forEach(e => {
-                e.setAttribute("fill", "lightblue");
                 e.setAttribute("fill-opacity", ".0120967");
             });
 
@@ -50,7 +49,7 @@ export default function Deuxieme({ width, height }) {
 
             if (el) {
 
-                el.setAttribute("fill", "lightgreen");
+                el.setAttribute("fill", "lightblue");
                 el.setAttribute("fill-opacity", "0.5");
             }
         }
@@ -1723,12 +1722,16 @@ export default function Deuxieme({ width, height }) {
                             <path d="M703.895 731.164H998.08609V1133.355H703.895Z" fill-opacity=".0120967" id="L2750" class="salle" fill="lightblue" />
                             <path d="M1005.289 1240.488H1299.48V1642.6831H1005.289Z" fill-opacity=".0120967" id="L2756" class="salle" fill="lightblue" />
                             <path d="M1296.258 1240.367H1590.4491V1642.562H1296.258Z" fill-opacity=".0120967" id="L2760" class="salle" fill="lightblue" />
-                            <path d="M1148.273 731.219H1290.9879V1133.4141H1148.273Z" fill-opacity=".0120967" />
-                            <path d="M1002.891 731.25H1145.606V1133.4451H1002.891Z" fill-opacity=".0120967" />
-                            <path d="M699.309 1130.145H1594.993V1239.68H699.309Z" fill-opacity=".0120967" />
-                            <path d="M1590.168 1122.703H1744.648V1524.898H1590.168Z" fill-opacity=".0120967" />
+
+                            <path d="M1148.273 731.219H1290.9879V1133.4141H1148.273Z" fill-opacity=".0120967" id="T1" class="toilet" />
+                            <path d="M1002.891 731.25H1145.606V1133.4451H1002.891Z" fill-opacity=".0120967" id="T2" class="toilet" />
+
+                            <path d="M699.309 1130.145H1594.993V1239.68H699.309Z" fill-opacity=".0120967" id="C-L-2-1" class="corridor" />
+
+                            <path d="M1590.168 1122.703H1744.648V1524.898H1590.168Z" fill-opacity=".0120967" id="E-L-2-1" class="escalier" />
+                            <path d="M558.125 1122.84H712.605V1525.031H558.125Z" fill-opacity=".0120967" id="E-L-2-2" class="escalier" />
+
                             <path d="M1294.078 1043.355H1367.676V1138.183H1294.078Z" fill-opacity=".0120967" />
-                            <path d="M558.125 1122.84H712.605V1525.031H558.125Z" fill-opacity=".0120967" />
                         </g>
                     </g>
                 </svg>
