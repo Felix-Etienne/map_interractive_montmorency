@@ -41,7 +41,6 @@ export default function Premier({ width, height }) {
 
         function highlightClass(id) {
             document.querySelectorAll(".salle").forEach(e => {
-                e.setAttribute("fill", "lightblue");
                 e.setAttribute("fill-opacity", ".0120967");
             });
 
@@ -49,8 +48,7 @@ export default function Premier({ width, height }) {
             let el = document.getElementById(id);
 
             if (el) {
-
-                el.setAttribute("fill", "lightgreen");
+                el.setAttribute("fill", "lightblue");
                 el.setAttribute("fill-opacity", "0.5");
             }
         }
