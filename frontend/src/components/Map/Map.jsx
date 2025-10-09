@@ -40,7 +40,7 @@ export default function Map() {
                 <div>
                     <div className="map">{maps[level]}</div>
                 </div>
-            </div >
+            </div>
         </>
 
     );
