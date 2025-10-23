@@ -115,7 +115,7 @@ const loginStudent = async (req, res, next) => {
     let token;
 
     token = jwt.sign(
-      { username: result.data[0].username, email: result.data[0].email },
+      { username: result.data[0].username, email: result.data[0].email, userId: result.data[0].id },
       "cleSuperSecrete",
       { expiresIn: "1h" }
     );
@@ -123,6 +123,7 @@ const loginStudent = async (req, res, next) => {
     res.status(200).json({
       username: result.data[0].username,
       email: result.data[0].email,
+      userId: result.data[0].id,
       token: token,
     });
   } catch (err) {
@@ -138,21 +139,24 @@ const registerStudent = async (req, res, next) => {
       return next(new HttpError("Erreur de frappe", 422));
     }
     const result = await db.from("etudiants").insert(req.body);
-    // console.log(result);
+
+    // console.log(`result: ${JSON.stringify(result)}`);
+
     if (result.error != null) {
-      return next(new HttpError(result.error, result.status));
+      // console.log(result);
+      return next(new HttpError(result.error.details, result.status));
     }
     const student = await db
       .from("etudiants")
       .select()
       .eq("email", req.body.email);
 
-    console.log(student);
+    // console.log(`student: ${JSON.stringify(student)}`);
 
     let token;
 
     token = jwt.sign(
-      { username: student.data[0].username, email: student.data[0].email },
+      { username: student.data[0].username, email: student.data[0].email, userId: student.data[0].id  },
       "cleSuperSecrete",
       { expiresIn: "1h" }
     );
@@ -160,6 +164,7 @@ const registerStudent = async (req, res, next) => {
     res.status(200).json({
       username: student.data[0].username,
       email: student.data[0].email,
+      userId: student.data[0].id,
       token: token,
     });
   } catch (err) {
