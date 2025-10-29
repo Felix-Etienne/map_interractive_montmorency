@@ -9,12 +9,12 @@ export default function SearchBar({ onSelectClasse, classes = [] }) {
     const term = searchTerm.toLowerCase().trim();
     if (!term) return [];
     return classes.filter((cls) => cls.toLowerCase().includes(term));
-  }, [searchTerm]);
+  }, [searchTerm, classes]);
 
   const handleSelect = (cls) => {
     setSearchTerm(cls);
     setShowResults(false);
-    if (onSelectClasse) onSelectClasse(cls); 
+    if (onSelectClasse) onSelectClasse(cls, true);
   };
 
   const handleChange = (e) => {
@@ -23,14 +23,14 @@ export default function SearchBar({ onSelectClasse, classes = [] }) {
   };
 
   return (
-    <div className="search-container">
-      <h2>Rechercher une classe</h2>
+    <div className="search-container" style={{ position: "relative" }}>
       <input
         type="text"
-        placeholder="Entrer le nom de la classe..."
+        placeholder="Rechercher une classe"
         value={searchTerm}
         onChange={handleChange}
         className="search-input"
+        onFocus={() => setShowResults(true)}
       />
 
       {showResults && filteredClasses.length > 0 && (
