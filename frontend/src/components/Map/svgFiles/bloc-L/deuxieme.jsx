@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { UncontrolledReactSVGPanZoom } from "react-svg-pan-zoom";
 import SearchBar from "../../../SearchBar/SearchBar";
 
-export default function Deuxieme({ width, height }) {
+export default function Deuxieme({ width, height, highlightedPath, nodePositions }) {
     const Viewer = useRef(null);
     const [tool, setTool] = useState("auto");
     const [value, setValue] = useState(null);
@@ -66,8 +66,6 @@ export default function Deuxieme({ width, height }) {
         }
     }, []);
 
-
-
     return (
         <div>
             <SearchBar />
@@ -81,6 +79,30 @@ export default function Deuxieme({ width, height }) {
                 detectAutoPan={false}
                 background="white"
             >
+                <svg
+                    className="map"
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 2592 1728"
+                    style={{ position: "absolute", display: "block", pointerEvents: "none" }}
+                >
+                    {highlightedPath.length > 1 && (
+                        <polyline
+                            points={highlightedPath
+                                .map(id => {
+                                    const pos = nodePositions[id];
+                                    return pos ? `${pos.x},${pos.y}` : null;
+                                })
+                                .filter(Boolean)
+                                .join(" ")}
+                            fill="none"
+                            stroke="red"
+                            strokeWidth="4"
+                            strokeLinejoin="round"
+                            strokeLinecap="round"
+                        />
+                    )}
+                </svg>
                 <svg id="plan" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" width="100%" height="100%" viewBox="0 0 2592 1728">
                     <defs>
                         <clipPath id="clip_332">
