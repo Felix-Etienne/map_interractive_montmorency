@@ -3,127 +3,152 @@ import { useRef, useState } from "react";
 import { UncontrolledReactSVGPanZoom } from "react-svg-pan-zoom";
 import SearchBar from "../../../SearchBar/SearchBar";
 
-export default function Premier({ width, height, highlightedPath, nodePositions }) {
-    const Viewer = useRef(null);
-    const [tool, setTool] = useState("auto");
-    const [value, setValue] = useState(null);
-    const [size, setSize] = useState({ width, height });
-    const [hoveredSalle, setHoveredSalle] = useState(null);
-    const [selectedSalle, setSelectedSalle] = useState(null);
-    const [infoBox, setInfoBox] = useState({ visible: false, x: 0, y: 0, id: "" });
-    const [classIds, setClassIds] = useState([]);
+export default function Premier({
+  width,
+  height,
+  highlightedPath,
+  nodePositions,
+}) {
+  const Viewer = useRef(null);
+  const [tool, setTool] = useState("auto");
+  const [value, setValue] = useState(null);
+  const [size, setSize] = useState({ width, height });
+  const [hoveredSalle, setHoveredSalle] = useState(null);
+  const [selectedSalle, setSelectedSalle] = useState(null);
+  const [infoBox, setInfoBox] = useState({
+    visible: false,
+    x: 0,
+    y: 0,
+    id: "",
+  });
+  const [classIds, setClassIds] = useState([]);
 
-    useEffect(() => {
-        setSize({ width, height });
-    }, [width, height]);
+  useEffect(() => {
+    setSize({ width, height });
+  }, [width, height]);
 
-    // pour recup les id des classes pour la search bar
-    useEffect(() => {
-        const allIds = Array.from(document.querySelectorAll(".salle"))
-        .map((el) => el.id)
-        .filter((id) => /^[A-Z]\d{4}$/.test(id)); 
-        const uniqueIds = Array.from(new Set(allIds));
-        setClassIds(uniqueIds);
-    }, []);
+  // pour recup les id des classes pour la search bar
+  useEffect(() => {
+    const allIds = Array.from(document.querySelectorAll(".salle"))
+      .map((el) => el.id)
+      .filter((id) => /^[A-Z]\d{4}$/.test(id));
+    const uniqueIds = Array.from(new Set(allIds));
+    setClassIds(uniqueIds);
+  }, []);
 
+  useEffect(() => {
+    const salles = document.querySelectorAll(".salle");
 
-    useEffect(() => {
-        document.querySelectorAll(".salle").forEach(salle => {
-            const id = salle.id;
-            const viewer = Viewer.current;
-            salle.addEventListener("mouseenter", () => {
-                highlightClass(id);
-            });
-            salle.addEventListener("mouseleave", () => setInfoBox(
-                { ...infoBox, visible: false }
-            ));
-            salle.addEventListener("click", (e) => {
-                setSelectedSalle(salle.id);
-                console.log("Salle cliquée :", id);
-                setInfoBox({
-                    visible: true,
-                    x: e.clientX,
-                    y: e.clientY,
-                    id,
-                });
-            });
-        });}, []);
+    const handleMouseEnter = (e) => {
+      const id = e.target.id;
+      highlightClass(id);
+    };
 
-        function highlightClass(id) {
-            document.querySelectorAll(".salle").forEach(e => {
-                e.setAttribute("fill", "lightblue");
-                e.setAttribute("fill-opacity", ".0120967");
-            });
+    const handleClick = (e) => {
+      const id = e.target.id;
+      setSelectedSalle(id);
+      highlightClass(id, true);
+      console.log("Salle cliquée :", id);
+      setInfoBox({
+        visible: true,
+        x: e.clientX,
+        y: e.clientY,
+        id,
+      });
+    };
 
-            if (!id) return;
-            let el = document.getElementById(id);
+    salles.forEach((salle) => {
+      salle.addEventListener("mouseenter", handleMouseEnter);
+      salle.addEventListener("click", handleClick);
+    });
 
-            if (el) {
-                el.setAttribute("fill", "lightblue");
-                el.setAttribute("fill-opacity", "0.5");
-                const rect = el.getBoundingClientRect();
-                setInfoBox({
-                  visible: true,
-                  x: rect.left + rect.width / 2,
-                  y: rect.top - 40,
-                  id,
-                });
-            }
-        };
+    // Cleanup
+    return () => {
+      salles.forEach((salle) => {
+        salle.removeEventListener("mouseenter", handleMouseEnter);
+        salle.removeEventListener("click", handleClick);
+      });
+    };
+  }, []);
 
+  function highlightClass(id, showPopup = false) {
+    document.querySelectorAll(".salle").forEach((e) => {
+      e.setAttribute("fill", "lightblue");
+      e.setAttribute("fill-opacity", ".0120967");
+    });
 
-    useEffect(() => {
-        if (Viewer.current) {
-            const viewer = Viewer.current.class;
-            const id = setTimeout(() => {
-                viewer.fitToViewer();
-            }, 0);
+    if (!id) return;
+    let el = document.getElementById(id);
 
-            return () => clearTimeout(id);
-        }
-    }, []);
+    if (el) {
+      el.setAttribute("fill", "lightblue");
+      el.setAttribute("fill-opacity", "0.5");
 
-    return (
-        <div>
-            <SearchBar onSelectClasse={highlightClass} classes={classIds} />
-            <UncontrolledReactSVGPanZoom
-                ref={Viewer}
-                width={size.width}
-                height={size.height}
-                tool={tool}
-                onChangeTool={setTool}
-                onChangeValue={setValue}
-                detectAutoPan={false}
-                background="white"
-            >
-                <svg viewBox="0 0 2592 1728"
-                    className="map"
-                    width="100%"
-                    height="100%">
-                    <svg
-                        className="map"
-                        width="100%"
-                        height="100%"
-                        style={{ position: "absolute", display: "block", pointerEvents: "none" }}
-                        viewBox="0 0 2592 1728"
-                    >
-                        {highlightedPath.length > 1 && (
-                            <polyline
-                                points={highlightedPath
-                                    .map(id => {
-                                        const pos = nodePositions[id];
-                                        return pos ? `${pos.x},${pos.y}` : null;
-                                    })
-                                    .filter(Boolean)
-                                    .join(" ")}
-                                fill="none"
-                                stroke="red"
-                                strokeWidth="4"
-                                strokeLinejoin="round"
-                                strokeLinecap="round"
-                            />
-                        )}
-                </svg>
+      if (showPopup) {
+        const rect = el.getBoundingClientRect();
+        setInfoBox({
+          visible: true,
+          x: rect.left + rect.width / 2,
+          y: rect.top - 40,
+          id,
+        });
+      }
+    }
+  }
+
+  useEffect(() => {
+    if (Viewer.current) {
+      const viewer = Viewer.current.class;
+      const id = setTimeout(() => {
+        viewer.fitToViewer();
+      }, 0);
+
+      return () => clearTimeout(id);
+    }
+  }, []);
+
+  return (
+    <div>
+      <SearchBar onSelectClasse={highlightClass} classes={classIds} />
+      <UncontrolledReactSVGPanZoom
+        ref={Viewer}
+        width={size.width}
+        height={size.height}
+        tool={tool}
+        onChangeTool={setTool}
+        onChangeValue={setValue}
+        detectAutoPan={false}
+        background="white"
+      >
+        <svg viewBox="0 0 2592 1728" className="map" width="100%" height="100%">
+          <svg
+            className="map"
+            width="100%"
+            height="100%"
+            style={{
+              position: "absolute",
+              display: "block",
+              pointerEvents: "none",
+            }}
+            viewBox="0 0 2592 1728"
+          >
+            {highlightedPath.length > 1 && (
+              <polyline
+                points={highlightedPath
+                  .map((id) => {
+                    const pos = nodePositions[id];
+                    return pos ? `${pos.x},${pos.y}` : null;
+                  })
+                  .filter(Boolean)
+                  .join(" ")}
+                fill="none"
+                stroke="red"
+                strokeWidth="4"
+                strokeLinejoin="round"
+                strokeLinecap="round"
+              />
+            )}
+          </svg>
                 <svg id="plan" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" width="100%" height="100%" viewBox="0 0 2592 1728">
                     <defs>
                         <clipPath id="clip_332">
@@ -1779,26 +1804,26 @@ export default function Premier({ width, height, highlightedPath, nodePositions 
                     </g>
                 </svg>
             </svg>
-            </UncontrolledReactSVGPanZoom>
-            {infoBox.visible && (
-                <div
-                    style={{
-                        position: "fixed",
-                        left: infoBox.x,
-                        top: infoBox.y,
-                        background: "white",
-                        border: "1px solid #ccc",
-                        padding: "8px",
-                        zIndex: 10
-                    }}
-                >
-                    <strong>Classe : </strong> {infoBox.id}
-                    <br />
-                    <button onClick={() => setInfoBox({ ...infoBox, visible: false })}>Fermer</button>
-                </div>
-            )}
+      </UncontrolledReactSVGPanZoom>
+      {infoBox.visible && (
+        <div
+          style={{
+            position: "fixed",
+            left: infoBox.x,
+            top: infoBox.y,
+            background: "white",
+            border: "1px solid #ccc",
+            padding: "8px",
+            zIndex: 10,
+          }}
+        >
+          <strong>Classe : </strong> {infoBox.id}
+          <br />
+          <button onClick={() => setInfoBox({ ...infoBox, visible: false })}>
+            Fermer
+          </button>
         </div>
-
-
-    );
+      )}
+    </div>
+  );
 }
