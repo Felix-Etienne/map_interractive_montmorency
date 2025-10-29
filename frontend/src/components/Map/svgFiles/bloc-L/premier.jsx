@@ -24,9 +24,9 @@ export default function Premier({ width, height }) {
             salle.addEventListener("mouseenter", () => {
                 highlightClass(id);
             });
-            salle.addEventListener("mouseleave", () => {
-                setHoveredSalle(null);
-            });
+            salle.addEventListener("mouseleave", () => setInfoBox(
+                { ...infoBox, visible: false }
+            ));
             salle.addEventListener("click", (e) => {
                 setSelectedSalle(salle.id);
                 console.log("Salle cliquée :", id);
@@ -34,13 +34,14 @@ export default function Premier({ width, height }) {
                     visible: true,
                     x: e.clientX,
                     y: e.clientY,
-                    id: salle.id
+                    id,
                 });
             });
-        });
+        });}, []);
 
         function highlightClass(id) {
             document.querySelectorAll(".salle").forEach(e => {
+                e.setAttribute("fill", "lightblue");
                 e.setAttribute("fill-opacity", ".0120967");
             });
 
@@ -50,9 +51,15 @@ export default function Premier({ width, height }) {
             if (el) {
                 el.setAttribute("fill", "lightblue");
                 el.setAttribute("fill-opacity", "0.5");
+                const rect = el.getBoundingClientRect();
+                setInfoBox({
+                  visible: true,
+                  x: rect.left + rect.width / 2,
+                  y: rect.top - 40,
+                  id,
+                });
             }
-        }
-    }, [hoveredSalle, selectedSalle]);
+        };
 
 
     useEffect(() => {
@@ -68,7 +75,7 @@ export default function Premier({ width, height }) {
 
     return (
         <div>
-            <SearchBar />
+             <SearchBar onSelectClasse={highlightClass} />
             <UncontrolledReactSVGPanZoom
                 ref={Viewer}
                 width={size.width}
@@ -1402,5 +1409,4 @@ export default function Premier({ width, height }) {
 
 
     );
-
 }
