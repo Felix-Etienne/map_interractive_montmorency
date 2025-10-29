@@ -1,11 +1,11 @@
 import React, { useState, useMemo } from "react";
 import "./SearchBar.css";
 
-export default function SearchBar() {
+export default function SearchBar({ onSelectClasse }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [showResults, setShowResults] = useState(false);
 
-  const classes = ["L-1762", "L-1760", "L-1758", "L-1756"];
+  const classes = ["L1756", "L1758", "L1760", "L1762"];
 
   const filteredClasses = useMemo(() => {
     const term = searchTerm.toLowerCase().trim();
@@ -16,6 +16,7 @@ export default function SearchBar() {
   const handleSelect = (cls) => {
     setSearchTerm(cls);
     setShowResults(false);
+    if (onSelectClasse) onSelectClasse(cls); 
   };
 
   const handleChange = (e) => {
@@ -25,9 +26,10 @@ export default function SearchBar() {
 
   return (
     <div className="search-container">
+      <h2>Rechercher une classe</h2>
       <input
         type="text"
-        placeholder="Rechercher une classe"
+        placeholder="Entrer le nom de la classe..."
         value={searchTerm}
         onChange={handleChange}
         className="search-input"
