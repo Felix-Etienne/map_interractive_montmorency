@@ -5,10 +5,16 @@ import { useState, useEffect } from 'react';
 
 export default function Map() {
     const [level, setLevel] = useState("1");
-    const [startSalle, setStartSalle] = useState(null);
+    const [highlightedPath, setHighlightedPath] = useState([]);
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
         height: window.innerHeight
+    });
+
+    const [pathfindingMode, setPathfindingMode] = useState(false);
+    const [selectedPath, setSelectedPath] = useState({
+        start: null,
+        end: null
     });
 
 
@@ -31,6 +37,32 @@ export default function Map() {
         "E-L-2-1": ["E-L-1-1", "C-L-2-1"],
         "E-L-2-2": ["E-L-1-2", "C-L-2-1"],
     };
+    const [nodePositions, setNodePositions] = useState({});
+
+    // TESTING PURPOSES
+    useEffect(() => {
+        // Wait for the SVG to be rendered
+        setTimeout(() => {
+            const positions = {};
+            document.querySelectorAll(".salle, .corridor, .escalier").forEach(el => {
+                const id = el.id;
+                if (!id) return;
+                // getBBox works for SVG elements
+                const bbox = el.getBBox();
+                positions[id] = {
+                    x: bbox.x + bbox.width / 2,
+                    y: bbox.y + bbox.height / 2
+                };
+            });
+            setNodePositions(positions);
+        }, 100); // Delay to ensure SVG is rendered
+    }, [level, windowSize]);
+
+    useEffect(() => {
+        if (highlightedPath && highlightedPath.length > 0) {
+            highlightPath(highlightedPath);
+        }
+    }, [highlightedPath, level]);
 
     useEffect(() => {
         function handleResize() {
@@ -44,29 +76,55 @@ export default function Map() {
     }, []);
 
     useEffect(() => {
+        function handleClick(e) {
+            if (!pathfindingMode) return;
 
-        document.querySelectorAll(".salle, .corridor, .escalier").forEach(el => {
-            el.addEventListener("click", () => {
-                if (!startSalle) {
-                    setStartSalle(el.id);
-                    el.style.fill = "orange";
-                } else {
-                    const endSalle = el.id;
-                    const path = trouverPath(mapGraphique, startSalle, endSalle);
-                    console.log("Path trouvé :", path);
-                    if (path) {
-                        highlightPath(path);
-                    }
-                    setStartSalle(null);
+            const el = e.currentTarget;
+            if (!selectedPath.start) {
+                setSelectedPath(prev => ({ ...prev, start: el.id }));
+                el.style.fill = "#4CAF50";
+            } else if (!selectedPath.end) {
+                setSelectedPath(prev => ({ ...prev, end: el.id }));
+                el.style.fill = "#F44336";
+
+                const path = trouverPath(mapGraphique, selectedPath.start, el.id);
+                if (path) {
+                    setHighlightedPath(path);
+                    highlightPath(path);
                 }
-            });
-        });
-    }, [startSalle, level]);
+            }
+        }
+
+        const elements = document.querySelectorAll(".salle, .corridor, .escalier");
+        elements.forEach(el => el.addEventListener("click", handleClick));
+
+        return () => {
+            elements.forEach(el => el.removeEventListener("click", handleClick));
+        };
+    }, [pathfindingMode, selectedPath, level]);
 
     const maps = {
-        1: <Premier width={windowSize.width * 0.5} height={windowSize.height * 0.7} />,
-        2: <Deuxieme width={windowSize.width * 0.5} height={windowSize.height * 0.7} />,
+        1: <Premier
+            width={windowSize.width * 0.5}
+            height={windowSize.height * 0.7}
+            highlightedPath={highlightedPath}
+            nodePositions={nodePositions}
+        />,
+        2: <Deuxieme
+            width={windowSize.width * 0.5}
+            height={windowSize.height * 0.7}
+            highlightedPath={highlightedPath}
+            nodePositions={nodePositions}
+        />,
     };
+
+    function clearCouleurs() {
+        document.querySelectorAll(".salle, .corridor, .escalier")
+            .forEach(el => {
+                el.style.fill = "";
+                el.style.fillOpacity = "";
+            });
+    }
 
 
     function trouverPath(graph, debut, fin) {
@@ -117,11 +175,31 @@ export default function Map() {
                     <option value="1">1er Étage</option>
                     <option value="2">2em Étage</option>
                 </select>
+
+                <div className="pathfinding-controls">
+                    <button
+                        onClick={() => {
+                            setPathfindingMode(!pathfindingMode);
+                            if (!pathfindingMode) {
+                                setSelectedPath({ start: null, end: null });
+                                clearCouleurs();
+                            }
+                        }}
+                    >
+                        {pathfindingMode ? "Annuler Navigation" : "Trouver un chemin"}
+                    </button>
+                    {pathfindingMode && (
+                        <div className="path-info">
+                            <p>Départ: {selectedPath.start || "Non sélectionné"}</p>
+                            <p>Arrivée: {selectedPath.end || "Non sélectionné"}</p>
+                        </div>
+                    )}
+                </div>
                 <div>
                     <div className="map">{maps[level]}</div>
                 </div>
             </div>
         </>
-
     );
+
 }
