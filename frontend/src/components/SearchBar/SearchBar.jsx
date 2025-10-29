@@ -1,11 +1,9 @@
 import React, { useState, useMemo } from "react";
 import "./SearchBar.css";
 
-export default function SearchBar({ onSelectClasse }) {
+export default function SearchBar({ onSelectClasse, classes = [] }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [showResults, setShowResults] = useState(false);
-
-  const classes = ["L1756", "L1758", "L1760", "L1762"];
 
   const filteredClasses = useMemo(() => {
     const term = searchTerm.toLowerCase().trim();

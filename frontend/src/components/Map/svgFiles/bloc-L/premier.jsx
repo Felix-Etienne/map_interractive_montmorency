@@ -11,10 +11,20 @@ export default function Premier({ width, height, highlightedPath, nodePositions 
     const [hoveredSalle, setHoveredSalle] = useState(null);
     const [selectedSalle, setSelectedSalle] = useState(null);
     const [infoBox, setInfoBox] = useState({ visible: false, x: 0, y: 0, id: "" });
+    const [classIds, setClassIds] = useState([]);
 
     useEffect(() => {
         setSize({ width, height });
     }, [width, height]);
+
+    // pour recup les id des classes pour la search bar
+    useEffect(() => {
+        const allIds = Array.from(document.querySelectorAll(".salle"))
+        .map((el) => el.id)
+        .filter((id) => /^[A-Z]\d{4}$/.test(id)); 
+        const uniqueIds = Array.from(new Set(allIds));
+        setClassIds(uniqueIds);
+    }, []);
 
 
     useEffect(() => {
@@ -75,7 +85,7 @@ export default function Premier({ width, height, highlightedPath, nodePositions 
 
     return (
         <div>
-             <SearchBar onSelectClasse={highlightClass} />
+            <SearchBar onSelectClasse={highlightClass} classes={classIds} />
             <UncontrolledReactSVGPanZoom
                 ref={Viewer}
                 width={size.width}
