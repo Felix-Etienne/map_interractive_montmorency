@@ -57,7 +57,7 @@ export default function Premier({ width, height, highlightedPath, nodePositions 
 
     useEffect(() => {
         if (Viewer.current) {
-            const viewer = Viewer.current;
+            const viewer = Viewer.current.class;
             const id = setTimeout(() => {
                 viewer.fitToViewer();
             }, 0);
