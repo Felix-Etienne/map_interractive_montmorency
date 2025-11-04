@@ -27,9 +27,10 @@ export default function Map() {
         "L2752": ["C-L-2-1"],
         "L2756": ["C-L-2-1"],
         "L2760": ["C-L-2-1"],
+        "L1222": ["C-L-1-1"],
         "T1": ["C-L-2-1"],
         "T2": ["C-L-2-1"],
-        "C-L-1-1": ["C-L-1-2"],
+        "C-L-1-1": ["C-L-1-2", "L1222"],
         "C-L-1-2": ["L1756", "L1758", "L1760", "L1762", "C-L-1-1", "E-L-1-1", "E-L-1-2"],
         "C-L-2-1": ["L2750", "L2752", "L2756", "L2760", "E-L-2-1", "E-L-2-2", "T1", "T2"],
         "E-L-1-1": ["C-L-1-2", "E-L-2-1"],
@@ -37,9 +38,15 @@ export default function Map() {
         "E-L-2-1": ["E-L-1-1", "C-L-2-1"],
         "E-L-2-2": ["E-L-1-2", "C-L-2-1"],
     };
+    const nodePositionsTest = {
+        "L1756": { x: 955, y: 1130 },
+        "L1760": { x: 1030, y: 1250 },
+        "C-L-1-2": { x: 150, y: 200 },
+
+    };
     const [nodePositions, setNodePositions] = useState({});
 
-    // TESTING PURPOSES
+    // TESTING PURPOSES -- Set les points de chaque place automatiquement
     useEffect(() => {
         // Wait for the SVG to be rendered
         setTimeout(() => {
@@ -55,7 +62,7 @@ export default function Map() {
                 };
             });
             setNodePositions(positions);
-        }, 100); // Delay to ensure SVG is rendered
+        }, 100);
     }, [level, windowSize]);
 
     useEffect(() => {
