@@ -39,10 +39,15 @@ export default function Map() {
         "E-L-2-2": ["E-L-1-2", "C-L-2-1"],
     };
     const nodePositionsTest = {
-        "L1756": { x: 955, y: 1130 },
-        "L1760": { x: 1030, y: 1250 },
-        "C-L-1-2": { x: 150, y: 200 },
+        "L1756": { x: 970, y: 1130 },
+        "L1758": { x: 740, y: 1250 },
+        "L1760": { x: 1035, y: 1250 },
+        "L1762": { x: 1330, y: 1250 },
 
+        "L2750": { x: 970, y: 1130 },
+        "L2752": { x: 740, y: 1250 },
+        "L2756": { x: 1035, y: 1250 },
+        "L2760": { x: 1330, y: 1250 },
     };
     const [nodePositions, setNodePositions] = useState({});
 
@@ -51,7 +56,7 @@ export default function Map() {
         // Wait for the SVG to be rendered
         setTimeout(() => {
             const positions = {};
-            document.querySelectorAll(".salle, .corridor, .escalier").forEach(el => {
+            document.querySelectorAll(".corridor, .escalier").forEach(el => {
                 const id = el.id;
                 if (!id) return;
                 // getBBox works for SVG elements
@@ -60,16 +65,21 @@ export default function Map() {
                     x: bbox.x + bbox.width / 2,
                     y: bbox.y + bbox.height / 2
                 };
+
+            });
+            document.querySelectorAll(".salle").forEach(el => {
+                const id = el.id;
+                if (!id) return;
+                positions[id] = {
+                    x: nodePositionsTest[id]?.x,
+                    y: nodePositionsTest[id]?.y
+                };
+
             });
             setNodePositions(positions);
         }, 100);
     }, [level, windowSize]);
 
-    useEffect(() => {
-        if (highlightedPath && highlightedPath.length > 0) {
-            highlightPath(highlightedPath);
-        }
-    }, [highlightedPath, level]);
 
     useEffect(() => {
         function handleResize() {
@@ -97,7 +107,6 @@ export default function Map() {
                 const path = trouverPath(mapGraphique, selectedPath.start, el.id);
                 if (path) {
                     setHighlightedPath(path);
-                    highlightPath(path);
                 }
             }
         }
@@ -153,22 +162,6 @@ export default function Map() {
             }
         }
         return null;
-    }
-
-    function highlightPath(path) {
-        document.querySelectorAll(".salle, .corridor, .escalier")
-            .forEach(el => {
-                el.style.fill = "",
-                    el.style.fillOpacity = "";
-            });
-
-        path.forEach(id => {
-            const el = document.getElementById(id);
-            if (el) {
-                el.style.fill = "yellow",
-                    el.style.fillOpacity = "0.7";
-            }
-        });
     }
 
     return (
