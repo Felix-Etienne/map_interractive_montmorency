@@ -1,0 +1,41 @@
+graph G {
+    compound="true"
+    rankdir="TB"
+    bgcolor="white"
+    fontname="Tahoma"
+
+    node [
+        fixedsize="false"
+        fontname="Tahoma"
+        color="white"
+        fillcolor="deepskyblue2"
+        fontcolor="black"
+        shape="box"
+        style="filled"
+        penwidth="1.0"
+    ]
+    edge [
+        fontname="Arial"
+        color="#00688b"
+        fontcolor="black"
+        fontsize="12"
+        arrowsize="0.5"
+        penwidth="1.0"
+    ]
+
+
+
+
+    "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]" -- "[frontend/src/components/Map/Map.jsx]" [label=" 8 ", penwidth="8", color="#00688bDB"];
+    "[frontend/src/components/SearchBar/SearchBar.jsx]" -- "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/src/components/SearchBar/SearchBar.jsx]" -- "[frontend/src/components/SearchBar/SearchBar.css]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/src/components/SearchBar/SearchBar.css]" -- "[frontend/src/components/Map/Map.jsx]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/components/SearchBar/SearchBar.jsx]" -- "[frontend/src/components/Map/Map.jsx]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/components/SearchBar/SearchBar.css]" -- "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]" [label=" 2 ", penwidth="2", color="#00688b70"];
+    "[frontend/src/components/Header/Header.css]" -- "[frontend/src/components/Map/Map.jsx]" [label=" 1 ", penwidth="1", color="#00688b5E"];
+    "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]" -- "[frontend/src/components/Map/path.jsx]" [label=" 1 ", penwidth="1", color="#00688b5E"];
+    "[frontend/src/components/Header/Header.jsx]" -- "[frontend/src/components/Map/Map.jsx]" [label=" 1 ", penwidth="1", color="#00688b5E"];
+    "[frontend/src/components/Header/Header.jsx]" -- "[frontend/src/components/Header/Header.css]" [label=" 1 ", penwidth="1", color="#00688b5E"];
+    "[frontend/src/components/Map/path.jsx]" -- "[frontend/src/components/Map/Map.jsx]" [label=" 1 ", penwidth="1", color="#00688b5E"];
+
+}

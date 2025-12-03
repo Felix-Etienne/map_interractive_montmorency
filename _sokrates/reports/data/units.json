@@ -1,0 +1,29 @@
+[ {
+  "shortName" : "function errorHandler()",
+  "longName" : "",
+  "relativeFileName" : "backend/middlewares/error-handler.js",
+  "fileLinesCount" : 10,
+  "components" : [ "primary::backend" ],
+  "startLine" : 1,
+  "endLine" : 9,
+  "linesOfCode" : 7,
+  "mcCabeIndex" : 4,
+  "numberOfParameters" : 4,
+  "numberOfLiterals" : 0,
+  "numberOfStatements" : 0,
+  "numberOfExpressions" : 0
+}, {
+  "shortName" : "export default defineConfig()",
+  "longName" : "",
+  "relativeFileName" : "frontend/vite.config.js",
+  "fileLinesCount" : 11,
+  "components" : [ "primary::frontend" ],
+  "startLine" : 5,
+  "endLine" : 11,
+  "linesOfCode" : 7,
+  "mcCabeIndex" : 1,
+  "numberOfParameters" : 1,
+  "numberOfLiterals" : 0,
+  "numberOfStatements" : 0,
+  "numberOfExpressions" : 0
+} ]

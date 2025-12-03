@@ -1,0 +1,137 @@
+<html>
+<head>
+    <title>frontend/src/components/App.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">frontend/src/components/App.jsx (<b>102</b> lines of code) (<a href="App.jsx">raw</a>):</h3>
+<div id="editor">
+import &quot;./App.css&quot;;
+
+import {
+    createBrowserRouter,
+    Navigate,
+    RouterProvider,
+} from &quot;react-router-dom&quot;;
+
+import { useCallback, useState, useEffect } from &quot;react&quot;;
+import Inscription from &quot;./Insriptions/Inscription.jsx&quot;;
+import ConnectionForm from &quot;./ConnectionForm/ConnectionForm.jsx&quot;;
+import Map from &quot;./Map/Map.jsx&quot;;
+import Header from &quot;./Header/Header.jsx&quot;;
+import ErrorPage from &quot;../Containers/ErrorPage.jsx&quot;;
+import { AuthContext } from &quot;./AuthContext/AuthContext&quot;;
+
+
+const routerLogin = createBrowserRouter([
+    {
+        path: &quot;/&quot;,
+        element: &lt;Header /&gt;,
+        errorElement: &lt;ErrorPage /&gt;,
+        children: [
+            { path: &quot;/connection&quot;, element: &lt;Navigate to=&quot;/&quot; replace /&gt; },
+            { path: &quot;/inscription&quot;, element: &lt;Navigate to=&quot;/&quot; replace /&gt; },
+            { path: &quot;&quot;, element: &lt;Map /&gt; },
+        ],
+    },
+]);
+const router = createBrowserRouter([
+    {
+        path: &quot;/&quot;,
+        element: &lt;Header /&gt;,
+        errorElement: &lt;ErrorPage /&gt;,
+        children: [
+            { path: &quot;&quot;, element: &lt;Map /&gt; },
+            { path: &quot;/inscription&quot;, element: &lt;Inscription /&gt; },
+            { path: &quot;/connection&quot;, element: &lt;ConnectionForm /&gt; },
+        ],
+    },
+]);
+
+const App = () =&gt; {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [token, setToken] = useState(false);
+    const [userId, setUserId] = useState(false);
+    const [userName, setUserName] = useState(false);
+    useEffect(() =&gt; {
+        const storedToken = localStorage.getItem(&quot;token&quot;);
+        const storedUserId = localStorage.getItem(&quot;userId&quot;);
+        const storedUserName = localStorage.getItem(&quot;userName&quot;);
+
+        if (storedToken &amp;&amp; storedUserId &amp;&amp; storedUserName) {
+            setIsLoggedIn(true);
+            setToken(storedToken);
+            setUserId(storedUserId);
+            setUserName(storedUserName);
+        }
+    }, []);
+
+    const login = useCallback((name, uid, token) =&gt; {
+        setIsLoggedIn(true);
+        setToken(token);
+        setUserId(uid);
+        setUserName(name);
+        localStorage.setItem(&quot;token&quot;, token);
+        localStorage.setItem(&quot;userId&quot;, uid);
+        localStorage.setItem(&quot;userName&quot;, name);
+    }, []);
+    const logout = useCallback(() =&gt; {
+        setIsLoggedIn(false);
+        setToken(null);
+        setUserId(null);
+        setUserName(null);
+        localStorage.removeItem(&quot;token&quot;);
+        localStorage.removeItem(&quot;userId&quot;);
+        localStorage.removeItem(&quot;userName&quot;);
+    }, []);
+    if (isLoggedIn)
+        return (
+            &lt;AuthContext.Provider
+                value={{
+                    isLoggedIn: !!token,
+                    token: token,
+                    userId: userId,
+                    userName: userName,
+                    login: login,
+                    logout: logout,
+                }}
+            &gt;
+                &lt;RouterProvider router={routerLogin} /&gt;
+            &lt;/AuthContext.Provider&gt;
+        );
+    return (
+        &lt;AuthContext.Provider
+            value={{
+                isLoggedIn: !!token,
+                token: token,
+                userId: userId,
+                userName: userName,
+                login: login,
+                logout: logout,
+            }}
+        &gt;
+            &lt;RouterProvider router={router} /&gt;
+        &lt;/AuthContext.Provider&gt;
+    );
+};
+
+export default App;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

@@ -1,0 +1,6 @@
+Contributor	#commits (all time)	#commits (30 days)	#commits (90 days)	#commits (180 days)	#commits (365 days)	first commit	last commit
+fe.hamel06@gmail.com	21	12	21	21	21	2025-09-17	2025-11-05	56%
+marioaldiaz05@gmail.com	10	10	10	10	10	2025-10-06	2025-10-29	27%
+150173079+felix-etienne@users.noreply.github.com	3	0	3	3	3	2025-09-18	2025-09-24	8%
+2396524@cmontmorency.qc.ca	2	0	2	2	2	2025-09-24	2025-09-24	5%
+2396547@cmontmorency.qc.ca	1	0	1	1	1	2025-09-23	2025-09-23	2%

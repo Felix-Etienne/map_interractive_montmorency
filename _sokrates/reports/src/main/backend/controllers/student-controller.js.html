@@ -1,0 +1,181 @@
+<html>
+<head>
+    <title>backend/controllers/student-controller.js</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">backend/controllers/student-controller.js (<b>135</b> lines of code) (<a href="student-controller.js">raw</a>):</h3>
+<div id="editor">import connectDB from &quot;../util/database.js&quot;;
+import jwt from &quot;jsonwebtoken&quot;;
+
+const db = await connectDB();
+
+// console.log(db);
+const getAllStudents = async (req, res, next) =&gt; {
+  try {
+    const result = await db.from(&quot;etudiants&quot;).select();
+    if (result.err) {
+      throw err;
+    }
+    res.status(200).json(result.data);
+  } catch (err) {
+    next(err);
+  }
+};
+
+const getStudentById = async (req, res, next) =&gt; {
+  try {
+    const result = await db.from(&quot;etudiants&quot;).select().eq(&quot;id&quot;, req.params.id);
+    if (result.err) {
+      throw err;
+    }
+    res.status(200).json(result.data);
+  } catch (err) {
+    next(err);
+  }
+};
+
+const getStudentByUsername = async (req, res, next) =&gt; {
+  try {
+    const result = await db
+      .from(&quot;etudiants&quot;)
+      .select()
+      .eq(&quot;username&quot;, req.params.name);
+    if (result.err != null) {
+      throw err;
+    }
+    res.status(200).json(result.data);
+  } catch (err) {
+    next(err);
+  }
+};
+
+const createStudent = async (req, res, next) =&gt; {
+  try {
+    const result = await db.from(&quot;etudiants&quot;).insert(req.body);
+
+    res.status(result.status).json(result);
+  } catch (err) {
+    next(err);
+  }
+};
+
+const updateStudent = async (req, res, next) =&gt; {
+  try {
+    const { data: updatedData, err: updatedErr } = await db
+      .from(&quot;etudiants&quot;)
+      .update({
+        username: req.body.username ? req.body.username : data[0].username,
+        email: req.body.email ? req.body.email : data[0].email,
+        password: req.body.password ? req.body.password : data[0].password,
+      })
+      .eq(&quot;id&quot;, req.params.id);
+    if (err) {
+      throw err;
+    }
+    const { data, err } = await db
+      .from(&quot;etudiants&quot;)
+      .select()
+      .eq(&quot;id&quot;, req.params.id);
+    res.status(200).json(data);
+  } catch (err) {
+    next(err);
+  }
+};
+
+const loginStudent = async (req, res, next) =&gt; {
+  try {
+    const result = await db
+      .from(&quot;etudiants&quot;)
+      .select()
+      .eq(&quot;email&quot;, req.body.email)
+      .eq(&quot;password&quot;, req.body.password);
+    // if (result.err) {
+    //   throw err;
+    // }
+    if (result.error != null) {
+      res.status(result.status).json(result.error);
+      return next(new Error(&quot;Erreur de connexion&quot;));
+    }
+    if (result.data.length &lt;= 0) {
+      return next(new Error(&quot;Aucun utilisateur avec ces infos trouv&eacute;&quot;, 404));
+    }
+    let token;
+
+    token = jwt.sign(
+      { username: result.data[0].username, email: result.data[0].email },
+      &quot;cleSuperSecrete&quot;,
+      { expiresIn: &quot;1h&quot; }
+    );
+
+    res.status(200).json({
+      username: result.data[0].username,
+      email: result.data[0].email,
+      token: token,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+const registerStudent = async (req, res, next) =&gt; {
+  try {
+    const result = await db.from(&quot;etudiants&quot;).insert(req.body);
+    console.log(result);
+    if (result.error != null) {
+      res.status(result.status).json(result.error);
+      return next(new Error(&quot;Erreur de inscription&quot;));
+    }
+    const student = await db
+      .from(&quot;etudiants&quot;)
+      .select()
+      .eq(&quot;email&quot;, req.body.email);
+
+    console.log(student);
+
+    let token;
+
+    token = jwt.sign(
+      { username: student.data[0].username, email: student.data[0].email },
+      &quot;cleSuperSecrete&quot;,
+      { expiresIn: &quot;1h&quot; }
+    );
+
+    res.status(200).json({
+      username: student.data[0].username,
+      email: student.data[0].email,
+      token: token,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+export default {
+  getAllStudents,
+  getStudentById,
+  getStudentByUsername,
+  createStudent,
+  updateStudent,
+  loginStudent,
+  registerStudent,
+};
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

@@ -1,0 +1,36 @@
+.search-container {
+  width: 400px; 
+  margin: 10px auto;
+  text-align: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.results-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 9999;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.result-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.result-item:hover {
+  background-color: #f0f0f0;
+}

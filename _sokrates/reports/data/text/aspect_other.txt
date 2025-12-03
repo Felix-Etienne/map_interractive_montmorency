@@ -1,0 +1,7 @@
+Path	Lines of Code
+README.md	2
+backend/README.md	1
+backend/package-lock.json	1287
+backend/package.json	21
+frontend/package-lock.json	4983
+frontend/package.json	34

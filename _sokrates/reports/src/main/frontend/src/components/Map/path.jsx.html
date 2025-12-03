@@ -1,0 +1,178 @@
+<html>
+<head>
+    <title>frontend/src/components/Map/path.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">frontend/src/components/Map/path.jsx (<b>146</b> lines of code) (<a href="path.jsx">raw</a>):</h3>
+<div id="editor">
+export default function Path({
+    highlightedPath,
+    nodePositions,
+}) {
+    return (
+        &lt;polyline
+            points={
+                highlightedPath.flatMap((id, idx, arr) =&gt; {
+                    const pos = nodePositions[id];
+                    if (!pos) return [];
+
+                    // 1. Corridor to Stairs (E-) Good
+                    if (
+                        id.startsWith(&quot;C-&quot;) &amp;&amp;
+                        idx &lt; arr.length - 1 &amp;&amp;
+                        arr[idx + 1].startsWith(&quot;E-&quot;)
+                    ) {
+                        console.log(&quot;1&quot;);
+                        const nextStairPos = nodePositions[arr[idx + 1]];
+                        if (nextStairPos) {
+                            // Go to corridor center, then turn at (x of stairs, y of corridor), then to stairs center
+                            return [
+                                `${nextStairPos.x},${pos.y}`,
+                            ];
+                        }
+                    }
+
+                    // 2. Stairs to Corridor
+                    if (
+                        id.startsWith(&quot;E-&quot;) &amp;&amp;
+                        idx &lt; arr.length - 1 &amp;&amp;
+                        arr[idx + 1].startsWith(&quot;C-&quot;)
+                    ) {
+                        console.log(&quot;2&quot;);
+                        const prevCorridorPos = nodePositions[arr[idx - 1]];
+                        if (prevCorridorPos) {
+                            // Turn at (x of stairs, y of corridor), then to stairs center
+                            return [
+                                `${prevCorridorPos.x},${prevCorridorPos.y}`,
+                                `${prevCorridorPos.x},${pos.y}`,
+                            ];
+                        }
+                    }
+
+                    // 3. Class to Corridor (as before)
+                    if (
+                        id.startsWith(&quot;L&quot;) &amp;&amp;
+                        idx &lt; arr.length - 1 &amp;&amp;
+                        arr[idx + 1].startsWith(&quot;C-&quot;)
+                    ) {
+                        console.log(&quot;3&quot;);
+                        const nextCorridorPos = nodePositions[arr[idx + 1]];
+                        if (nextCorridorPos) {
+                            return [
+                                `${pos.x},${pos.y}`,
+                                `${pos.x},${nextCorridorPos.y}`,
+                            ];
+                        }
+                    }
+
+                    // 4. Corridor to Class (as before)
+                    if (
+                        id.startsWith(&quot;C-&quot;) &amp;&amp;
+                        idx &lt; arr.length - 1 &amp;&amp;
+                        arr[idx + 1].startsWith(&quot;L&quot;)
+                    ) {
+                        console.log(&quot;4&quot;);
+                        const nextClassPos = nodePositions[arr[idx + 1]];
+                        if (nextClassPos) {
+                            return [
+                                `${nextClassPos.x},${pos.y}`,
+                            ];
+                        }
+                    }
+
+                    // 5. Stairs to Class
+                    if (
+                        id.startsWith(&quot;E-&quot;) &amp;&amp;
+                        idx &lt; arr.length - 1 &amp;&amp;
+                        arr[idx + 1].startsWith(&quot;L&quot;)
+                    ) {
+                        console.log(&quot;5&quot;);
+                        const nextClassPos = nodePositions[arr[idx + 1]];
+                        if (nextClassPos) {
+                            return [
+                                `${nextClassPos.x},${pos.y}`,
+                                `${pos.x},${pos.y}`,
+                            ];
+                        }
+                    }
+
+                    // 6. Class to Stairs
+                    if (
+                        id.startsWith(&quot;L&quot;) &amp;&amp;
+                        idx &lt; arr.length - 1 &amp;&amp;
+                        arr[idx + 1].startsWith(&quot;E-&quot;)
+                    ) {
+                        console.log(&quot;6&quot;);
+                        const nextStairPos = nodePositions[arr[idx + 1]];
+                        if (nextStairPos) {
+                            return [
+                                `${pos.x},${pos.y}`,
+                                `${pos.x},${nextStairPos.y}`,
+                            ];
+                        }
+                    }
+                    // 7. Stairs to corridor
+                    if (
+                        id.startsWith(&quot;E-&quot;) &amp;&amp;
+                        idx &lt; arr.length - 1 &amp;&amp;
+                        arr[idx + 1].startsWith(&quot;C-&quot;)
+                    ) {
+                        console.log(&quot;7&quot;);
+                        const nextCorridorPos = nodePositions[arr[idx + 1]];
+                        if (nextCorridorPos) {
+                            // Go from stairs center, horizontally to corridor x, then vertically to corridor center
+                            return [
+                                `${pos.x},${pos.y}`,
+                                `${pos.x},${nextCorridorPos.y}`,
+                            ];
+                        }
+                    }
+                    // 8. Corridor to Corridor
+                    if (
+                        id.startsWith(&quot;C-&quot;) &amp;&amp;
+                        idx &lt; arr.length - 1 &amp;&amp;
+                        arr[idx + 1].startsWith(&quot;C-&quot;)
+                    ) {
+                        console.log(&quot;8&quot;);
+                        const nextCorridorPos = nodePositions[arr[idx + 1]];
+                        if (nextCorridorPos) {
+                            // Go from corridor center, horizontally to next corridor x, then vertically to next corridor center
+                            return [
+                                `${nextCorridorPos.x},${pos.y}`,
+                                `${nextCorridorPos.x},${nextCorridorPos.y}`,
+                            ];
+                        }
+                    }
+                    // Default: just the node center
+                    if (id.startsWith(&quot;C-&quot;) || id.startsWith(&quot;E-&quot;) || id.startsWith(&quot;L&quot;)) {
+                        return [`${pos.x},${pos.y}`];
+                    }
+                    return [];
+                }).join(&quot; &quot;)}
+            fill=&quot;none&quot;
+            stroke=&quot;red&quot;
+            strokeWidth=&quot;4&quot;
+            strokeLinejoin=&quot;round&quot;
+            strokeLinecap=&quot;round&quot;
+        /&gt;
+    );
+}</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

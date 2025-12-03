@@ -1,0 +1,180 @@
+{
+  "title" : "Duplication",
+  "timestamp" : "2025-11-05 10:03:12",
+  "duplicates" : [ {
+    "blockSize" : 15,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "frontend/src/components/ConnectionForm/ConnectionForm.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 75,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 70,
+      "startLine" : 57,
+      "endLine" : 73,
+      "cleanedStartLine" : 53,
+      "cleanedEndLine" : 67
+    }, {
+      "file" : {
+        "relativePath" : "frontend/src/components/Insriptions/Inscription.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 102,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 95,
+      "startLine" : 87,
+      "endLine" : 106,
+      "cleanedStartLine" : 78,
+      "cleanedEndLine" : 92
+    } ]
+  }, {
+    "blockSize" : 11,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "frontend/src/components/App.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 102,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 100,
+      "startLine" : 81,
+      "endLine" : 91,
+      "cleanedStartLine" : 73,
+      "cleanedEndLine" : 83
+    }, {
+      "file" : {
+        "relativePath" : "frontend/src/components/App.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 102,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 100,
+      "startLine" : 95,
+      "endLine" : 105,
+      "cleanedStartLine" : 86,
+      "cleanedEndLine" : 96
+    } ]
+  }, {
+    "blockSize" : 8,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "frontend/src/components/ConnectionForm/ConnectionForm.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 75,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 70,
+      "startLine" : 24,
+      "endLine" : 31,
+      "cleanedStartLine" : 21,
+      "cleanedEndLine" : 28
+    }, {
+      "file" : {
+        "relativePath" : "frontend/src/components/Insriptions/Inscription.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 102,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 95,
+      "startLine" : 28,
+      "endLine" : 35,
+      "cleanedStartLine" : 24,
+      "cleanedEndLine" : 31
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "frontend/src/components/ConnectionForm/ConnectionForm.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 75,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 70,
+      "startLine" : 39,
+      "endLine" : 44,
+      "cleanedStartLine" : 36,
+      "cleanedEndLine" : 41
+    }, {
+      "file" : {
+        "relativePath" : "frontend/src/components/Insriptions/Inscription.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 102,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 95,
+      "startLine" : 40,
+      "endLine" : 45,
+      "cleanedStartLine" : 35,
+      "cleanedEndLine" : 40
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "backend/controllers/student-controller.js",
+        "extension" : "js",
+        "linesOfCode" : 135,
+        "components" : [ "primary::backend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 119,
+      "startLine" : 10,
+      "endLine" : 17,
+      "cleanedStartLine" : 5,
+      "cleanedEndLine" : 10
+    }, {
+      "file" : {
+        "relativePath" : "backend/controllers/student-controller.js",
+        "extension" : "js",
+        "linesOfCode" : 135,
+        "components" : [ "primary::backend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 119,
+      "startLine" : 22,
+      "endLine" : 29,
+      "cleanedStartLine" : 14,
+      "cleanedEndLine" : 19
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "frontend/src/components/Map/path.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 146,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 146,
+      "startLine" : 55,
+      "endLine" : 60,
+      "cleanedStartLine" : 51,
+      "cleanedEndLine" : 56
+    }, {
+      "file" : {
+        "relativePath" : "frontend/src/components/Map/path.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 146,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 146,
+      "startLine" : 118,
+      "endLine" : 123,
+      "cleanedStartLine" : 111,
+      "cleanedEndLine" : 116
+    } ]
+  } ],
+  "overallDuplication" : null
+}

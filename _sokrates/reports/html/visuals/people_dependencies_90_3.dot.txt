@@ -1,0 +1,38 @@
+graph G {
+    compound="true"
+    rankdir="TB"
+    bgcolor="white"
+    fontname="Tahoma"
+
+    node [
+        fixedsize="false"
+        fontname="Tahoma"
+        color="white"
+        fillcolor="grey"
+        fontcolor="black"
+        shape="box"
+        style="filled"
+        penwidth="1.0"
+    ]
+    edge [
+        fontname="Arial"
+        color="#00688b"
+        fontcolor="black"
+        fontsize="12"
+        arrowsize="0.5"
+        penwidth="1.0"
+    ]
+
+
+
+
+    "fe.hamel06@gmail.com" -- "150173079+felix-etienne@users.noreply.github.com" [label=" 38 ", penwidth="10", color="#00688bFF"];
+    "150173079+felix-etienne@users.noreply.github.com" -- "2396524@cmontmorency.qc.ca" [label=" 9 ", penwidth="2", color="#00688b70"];
+    "fe.hamel06@gmail.com" -- "2396524@cmontmorency.qc.ca" [label=" 8 ", penwidth="2", color="#00688b70"];
+    "2396547@cmontmorency.qc.ca" -- "150173079+felix-etienne@users.noreply.github.com" [label=" 7 ", penwidth="1", color="#00688b5E"];
+    "2396547@cmontmorency.qc.ca" -- "fe.hamel06@gmail.com" [label=" 6 ", penwidth="1", color="#00688b5E"];
+    "marioaldiaz05@gmail.com" -- "fe.hamel06@gmail.com" [label=" 5 ", penwidth="1", color="#00688b5E"];
+    "150173079+felix-etienne@users.noreply.github.com" -- "marioaldiaz05@gmail.com" [label=" 1 ", penwidth="1", color="#00688b4C"];
+    "2396524@cmontmorency.qc.ca" -- "marioaldiaz05@gmail.com" [label=" 1 ", penwidth="1", color="#00688b4C"];
+
+}

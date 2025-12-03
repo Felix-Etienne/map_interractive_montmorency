@@ -1,0 +1,1410 @@
+<head>
+    <style> body {
+        margin: 0;
+    } </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/force-graph"></script>
+</head>
+
+<body>
+<div id="graph"></div>
+
+<script>
+    const gData = {
+  "nodes" : [ {
+    "id" : "commit_ce94f2d302de5ca55c39154c875aafa6e1478cb1",
+    "size" : 2
+  }, {
+    "id" : "commit_fd2ff840439b7d6c06695b4984f3b9df078f68e6",
+    "size" : 2
+  }, {
+    "id" : "commit_1935bc8757862762619256d4840cc0891ed89a6e",
+    "size" : 6
+  }, {
+    "id" : "commit_9b8d6785871d2d066669329199a9e71bef5b99c8",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/Header/Header.css]",
+    "size" : 8
+  }, {
+    "id" : "commit_638b1047af68acbe51865dd4e4c65ac8ae6dbb9d",
+    "size" : 6
+  }, {
+    "id" : "[backend/routes/class-routes.js]",
+    "size" : 3
+  }, {
+    "id" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "size" : 8
+  }, {
+    "id" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "size" : 7
+  }, {
+    "id" : "commit_2dd3e8d4e8484328480b7e15ab65c8c941e866a9",
+    "size" : 6
+  }, {
+    "id" : "commit_9e1be9eeb21385ee96bdcf74235f2bab8413ae1c",
+    "size" : 3
+  }, {
+    "id" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "size" : 5
+  }, {
+    "id" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "size" : 4
+  }, {
+    "id" : "commit_62b0e32ef305756e2d0054222cd49b3a4f5e2e0d",
+    "size" : 3
+  }, {
+    "id" : "commit_a48788bea7dabfb2dad62e8211731d2ca9b91505",
+    "size" : 3
+  }, {
+    "id" : "commit_56495984999ae8a2b95376a4aff781c865c617b8",
+    "size" : 2
+  }, {
+    "id" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "size" : 4
+  }, {
+    "id" : "[frontend/src/components/App.jsx]",
+    "size" : 6
+  }, {
+    "id" : "[frontend/src/components/Header/Header.jsx]",
+    "size" : 10
+  }, {
+    "id" : "commit_8c7d3a09d5c7fa9cdabfe9e7f53042c6e6b9fd24",
+    "size" : 7
+  }, {
+    "id" : "[frontend/vite.config.js]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/main.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/Map/Map.css]",
+    "size" : 6
+  }, {
+    "id" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "size" : 3
+  }, {
+    "id" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "size" : 22
+  }, {
+    "id" : "commit_fed201bad79a2cfdaac3cdb7fa0a45d033f2913b",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "size" : 3
+  }, {
+    "id" : "commit_2825894601dd5acb9c065eab0decc073efbe4870",
+    "size" : 3
+  }, {
+    "id" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "size" : 3
+  }, {
+    "id" : "commit_bbb26ee6585bdd0164d04c2b313710530c9d6178",
+    "size" : 2
+  }, {
+    "id" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "size" : 9
+  }, {
+    "id" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "size" : 6
+  }, {
+    "id" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "size" : 5
+  }, {
+    "id" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "size" : 8
+  }, {
+    "id" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "size" : 4
+  }, {
+    "id" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "size" : 12
+  }, {
+    "id" : "commit_3a1b948335a3266454701899c26d13800e9cb0eb",
+    "size" : 3
+  }, {
+    "id" : "[frontend/src/components/App.css]",
+    "size" : 3
+  }, {
+    "id" : "[frontend/src/components/Map/path.jsx]",
+    "size" : 1
+  }, {
+    "id" : "[frontend/src/components/Map/Map.jsx]",
+    "size" : 18
+  }, {
+    "id" : "[frontend/index.html]",
+    "size" : 5
+  }, {
+    "id" : "commit_6b939b4eaf9ee7d3076e4a89e38106dc67e3dd46",
+    "size" : 5
+  }, {
+    "id" : "[backend/routes/student-routes.js]",
+    "size" : 4
+  }, {
+    "id" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "size" : 25
+  }, {
+    "id" : "[backend/controllers/student-controller.js]",
+    "size" : 4
+  }, {
+    "id" : "commit_da3c81d287f18474070d35f1f011368c41978ac7",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "size" : 3
+  }, {
+    "id" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "size" : 11
+  }, {
+    "id" : "[backend/app.js]",
+    "size" : 5
+  }, {
+    "id" : "[frontend/src/index.css]",
+    "size" : 6
+  }, {
+    "id" : "[backend/middlewares/error-handler.js]",
+    "size" : 3
+  }, {
+    "id" : "[backend/util/database.js]",
+    "size" : 3
+  }, {
+    "id" : "commit_51b4aee8dbace2caedddb235f833558319f99b7b",
+    "size" : 3
+  }, {
+    "id" : "commit_64a6200898b1275dc8e948d4e5c29a6ee34d03da",
+    "size" : 2
+  }, {
+    "id" : "[backend/controllers/class-controller.js]",
+    "size" : 3
+  }, {
+    "id" : "commit_3645d00b0d2e57710419b8a8bf5f00f33d99d33d",
+    "size" : 2
+  } ],
+  "links" : [ {
+    "source" : "commit_da3c81d287f18474070d35f1f011368c41978ac7",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_da3c81d287f18474070d35f1f011368c41978ac7",
+    "count" : 1
+  }, {
+    "source" : "commit_da3c81d287f18474070d35f1f011368c41978ac7",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_da3c81d287f18474070d35f1f011368c41978ac7",
+    "count" : 1
+  }, {
+    "source" : "commit_fed201bad79a2cfdaac3cdb7fa0a45d033f2913b",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_fed201bad79a2cfdaac3cdb7fa0a45d033f2913b",
+    "count" : 1
+  }, {
+    "source" : "commit_fed201bad79a2cfdaac3cdb7fa0a45d033f2913b",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_fed201bad79a2cfdaac3cdb7fa0a45d033f2913b",
+    "count" : 1
+  }, {
+    "source" : "commit_fd2ff840439b7d6c06695b4984f3b9df078f68e6",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_fd2ff840439b7d6c06695b4984f3b9df078f68e6",
+    "count" : 1
+  }, {
+    "source" : "commit_fd2ff840439b7d6c06695b4984f3b9df078f68e6",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_fd2ff840439b7d6c06695b4984f3b9df078f68e6",
+    "count" : 1
+  }, {
+    "source" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "count" : 3
+  }, {
+    "source" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "count" : 3
+  }, {
+    "source" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "count" : 3
+  }, {
+    "source" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "count" : 3
+  }, {
+    "source" : "commit_9b8d6785871d2d066669329199a9e71bef5b99c8",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_9b8d6785871d2d066669329199a9e71bef5b99c8",
+    "count" : 1
+  }, {
+    "source" : "commit_9b8d6785871d2d066669329199a9e71bef5b99c8",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_9b8d6785871d2d066669329199a9e71bef5b99c8",
+    "count" : 1
+  }, {
+    "source" : "commit_bbb26ee6585bdd0164d04c2b313710530c9d6178",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_bbb26ee6585bdd0164d04c2b313710530c9d6178",
+    "count" : 1
+  }, {
+    "source" : "commit_bbb26ee6585bdd0164d04c2b313710530c9d6178",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_bbb26ee6585bdd0164d04c2b313710530c9d6178",
+    "count" : 1
+  }, {
+    "source" : "commit_3a1b948335a3266454701899c26d13800e9cb0eb",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_3a1b948335a3266454701899c26d13800e9cb0eb",
+    "count" : 2
+  }, {
+    "source" : "commit_3a1b948335a3266454701899c26d13800e9cb0eb",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_3a1b948335a3266454701899c26d13800e9cb0eb",
+    "count" : 2
+  }, {
+    "source" : "commit_2dd3e8d4e8484328480b7e15ab65c8c941e866a9",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "commit_2dd3e8d4e8484328480b7e15ab65c8c941e866a9",
+    "count" : 5
+  }, {
+    "source" : "commit_2dd3e8d4e8484328480b7e15ab65c8c941e866a9",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_2dd3e8d4e8484328480b7e15ab65c8c941e866a9",
+    "count" : 5
+  }, {
+    "source" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 11
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "count" : 11
+  }, {
+    "source" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 11
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "count" : 11
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 21
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 21
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_6b939b4eaf9ee7d3076e4a89e38106dc67e3dd46",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "commit_6b939b4eaf9ee7d3076e4a89e38106dc67e3dd46",
+    "count" : 4
+  }, {
+    "source" : "commit_6b939b4eaf9ee7d3076e4a89e38106dc67e3dd46",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_6b939b4eaf9ee7d3076e4a89e38106dc67e3dd46",
+    "count" : 4
+  }, {
+    "source" : "commit_2825894601dd5acb9c065eab0decc073efbe4870",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "commit_2825894601dd5acb9c065eab0decc073efbe4870",
+    "count" : 2
+  }, {
+    "source" : "commit_2825894601dd5acb9c065eab0decc073efbe4870",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_2825894601dd5acb9c065eab0decc073efbe4870",
+    "count" : 2
+  }, {
+    "source" : "commit_9e1be9eeb21385ee96bdcf74235f2bab8413ae1c",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "commit_9e1be9eeb21385ee96bdcf74235f2bab8413ae1c",
+    "count" : 2
+  }, {
+    "source" : "commit_9e1be9eeb21385ee96bdcf74235f2bab8413ae1c",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_9e1be9eeb21385ee96bdcf74235f2bab8413ae1c",
+    "count" : 2
+  }, {
+    "source" : "commit_2dd3e8d4e8484328480b7e15ab65c8c941e866a9",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "commit_2dd3e8d4e8484328480b7e15ab65c8c941e866a9",
+    "count" : 5
+  }, {
+    "source" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 11
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "count" : 11
+  }, {
+    "source" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 7
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "count" : 7
+  }, {
+    "source" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 7
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "count" : 7
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 21
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_6b939b4eaf9ee7d3076e4a89e38106dc67e3dd46",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "commit_6b939b4eaf9ee7d3076e4a89e38106dc67e3dd46",
+    "count" : 4
+  }, {
+    "source" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "target" : "[frontend/src/index.css]",
+    "count" : 11
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "count" : 11
+  }, {
+    "source" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 11
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "count" : 11
+  }, {
+    "source" : "commit_8c7d3a09d5c7fa9cdabfe9e7f53042c6e6b9fd24",
+    "target" : "[frontend/src/index.css]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "commit_8c7d3a09d5c7fa9cdabfe9e7f53042c6e6b9fd24",
+    "count" : 6
+  }, {
+    "source" : "commit_8c7d3a09d5c7fa9cdabfe9e7f53042c6e6b9fd24",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "commit_8c7d3a09d5c7fa9cdabfe9e7f53042c6e6b9fd24",
+    "count" : 6
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/src/index.css]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[frontend/src/index.css]",
+    "count" : 21
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 21
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_1935bc8757862762619256d4840cc0891ed89a6e",
+    "target" : "[frontend/src/index.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "commit_1935bc8757862762619256d4840cc0891ed89a6e",
+    "count" : 5
+  }, {
+    "source" : "commit_1935bc8757862762619256d4840cc0891ed89a6e",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "commit_1935bc8757862762619256d4840cc0891ed89a6e",
+    "count" : 5
+  }, {
+    "source" : "commit_638b1047af68acbe51865dd4e4c65ac8ae6dbb9d",
+    "target" : "[frontend/src/index.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "commit_638b1047af68acbe51865dd4e4c65ac8ae6dbb9d",
+    "count" : 5
+  }, {
+    "source" : "commit_638b1047af68acbe51865dd4e4c65ac8ae6dbb9d",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "commit_638b1047af68acbe51865dd4e4c65ac8ae6dbb9d",
+    "count" : 5
+  }, {
+    "source" : "commit_8c7d3a09d5c7fa9cdabfe9e7f53042c6e6b9fd24",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "commit_8c7d3a09d5c7fa9cdabfe9e7f53042c6e6b9fd24",
+    "count" : 6
+  }, {
+    "source" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 8
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "count" : 8
+  }, {
+    "source" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 8
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "count" : 8
+  }, {
+    "source" : "commit_9e1be9eeb21385ee96bdcf74235f2bab8413ae1c",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "commit_9e1be9eeb21385ee96bdcf74235f2bab8413ae1c",
+    "count" : 2
+  }, {
+    "source" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 11
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "count" : 11
+  }, {
+    "source" : "commit_8c7d3a09d5c7fa9cdabfe9e7f53042c6e6b9fd24",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "commit_8c7d3a09d5c7fa9cdabfe9e7f53042c6e6b9fd24",
+    "count" : 6
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 21
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_1935bc8757862762619256d4840cc0891ed89a6e",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "commit_1935bc8757862762619256d4840cc0891ed89a6e",
+    "count" : 5
+  }, {
+    "source" : "commit_638b1047af68acbe51865dd4e4c65ac8ae6dbb9d",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "commit_638b1047af68acbe51865dd4e4c65ac8ae6dbb9d",
+    "count" : 5
+  }, {
+    "source" : "commit_2dd3e8d4e8484328480b7e15ab65c8c941e866a9",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "commit_2dd3e8d4e8484328480b7e15ab65c8c941e866a9",
+    "count" : 5
+  }, {
+    "source" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 11
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "count" : 11
+  }, {
+    "source" : "commit_8c7d3a09d5c7fa9cdabfe9e7f53042c6e6b9fd24",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "commit_8c7d3a09d5c7fa9cdabfe9e7f53042c6e6b9fd24",
+    "count" : 6
+  }, {
+    "source" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 7
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "count" : 7
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 21
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 11
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "count" : 11
+  }, {
+    "source" : "commit_8c7d3a09d5c7fa9cdabfe9e7f53042c6e6b9fd24",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "commit_8c7d3a09d5c7fa9cdabfe9e7f53042c6e6b9fd24",
+    "count" : 6
+  }, {
+    "source" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 7
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "count" : 7
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 21
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_1935bc8757862762619256d4840cc0891ed89a6e",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "commit_1935bc8757862762619256d4840cc0891ed89a6e",
+    "count" : 5
+  }, {
+    "source" : "commit_1935bc8757862762619256d4840cc0891ed89a6e",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "commit_1935bc8757862762619256d4840cc0891ed89a6e",
+    "count" : 5
+  }, {
+    "source" : "commit_8c7d3a09d5c7fa9cdabfe9e7f53042c6e6b9fd24",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "commit_8c7d3a09d5c7fa9cdabfe9e7f53042c6e6b9fd24",
+    "count" : 6
+  }, {
+    "source" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 7
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "count" : 7
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 21
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_1935bc8757862762619256d4840cc0891ed89a6e",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "commit_1935bc8757862762619256d4840cc0891ed89a6e",
+    "count" : 5
+  }, {
+    "source" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "target" : "[frontend/index.html]",
+    "count" : 11
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "count" : 11
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/index.html]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[frontend/index.html]",
+    "count" : 21
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_6b939b4eaf9ee7d3076e4a89e38106dc67e3dd46",
+    "target" : "[frontend/index.html]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "commit_6b939b4eaf9ee7d3076e4a89e38106dc67e3dd46",
+    "count" : 4
+  }, {
+    "source" : "commit_638b1047af68acbe51865dd4e4c65ac8ae6dbb9d",
+    "target" : "[frontend/index.html]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "commit_638b1047af68acbe51865dd4e4c65ac8ae6dbb9d",
+    "count" : 5
+  }, {
+    "source" : "commit_638b1047af68acbe51865dd4e4c65ac8ae6dbb9d",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_638b1047af68acbe51865dd4e4c65ac8ae6dbb9d",
+    "count" : 5
+  }, {
+    "source" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "count" : 3
+  }, {
+    "source" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "count" : 3
+  }, {
+    "source" : "commit_56495984999ae8a2b95376a4aff781c865c617b8",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "commit_56495984999ae8a2b95376a4aff781c865c617b8",
+    "count" : 1
+  }, {
+    "source" : "commit_56495984999ae8a2b95376a4aff781c865c617b8",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_56495984999ae8a2b95376a4aff781c865c617b8",
+    "count" : 1
+  }, {
+    "source" : "commit_ce94f2d302de5ca55c39154c875aafa6e1478cb1",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "commit_ce94f2d302de5ca55c39154c875aafa6e1478cb1",
+    "count" : 1
+  }, {
+    "source" : "commit_ce94f2d302de5ca55c39154c875aafa6e1478cb1",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_ce94f2d302de5ca55c39154c875aafa6e1478cb1",
+    "count" : 1
+  }, {
+    "source" : "commit_3645d00b0d2e57710419b8a8bf5f00f33d99d33d",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "commit_3645d00b0d2e57710419b8a8bf5f00f33d99d33d",
+    "count" : 1
+  }, {
+    "source" : "commit_3645d00b0d2e57710419b8a8bf5f00f33d99d33d",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_3645d00b0d2e57710419b8a8bf5f00f33d99d33d",
+    "count" : 1
+  }, {
+    "source" : "commit_62b0e32ef305756e2d0054222cd49b3a4f5e2e0d",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "commit_62b0e32ef305756e2d0054222cd49b3a4f5e2e0d",
+    "count" : 2
+  }, {
+    "source" : "commit_62b0e32ef305756e2d0054222cd49b3a4f5e2e0d",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "commit_62b0e32ef305756e2d0054222cd49b3a4f5e2e0d",
+    "count" : 2
+  }, {
+    "source" : "commit_51b4aee8dbace2caedddb235f833558319f99b7b",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "commit_51b4aee8dbace2caedddb235f833558319f99b7b",
+    "count" : 2
+  }, {
+    "source" : "commit_51b4aee8dbace2caedddb235f833558319f99b7b",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "commit_51b4aee8dbace2caedddb235f833558319f99b7b",
+    "count" : 2
+  }, {
+    "source" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "count" : 3
+  }, {
+    "source" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "count" : 3
+  }, {
+    "source" : "commit_64a6200898b1275dc8e948d4e5c29a6ee34d03da",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "commit_64a6200898b1275dc8e948d4e5c29a6ee34d03da",
+    "count" : 1
+  }, {
+    "source" : "commit_64a6200898b1275dc8e948d4e5c29a6ee34d03da",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "commit_64a6200898b1275dc8e948d4e5c29a6ee34d03da",
+    "count" : 1
+  }, {
+    "source" : "commit_62b0e32ef305756e2d0054222cd49b3a4f5e2e0d",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_62b0e32ef305756e2d0054222cd49b3a4f5e2e0d",
+    "count" : 2
+  }, {
+    "source" : "commit_51b4aee8dbace2caedddb235f833558319f99b7b",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_51b4aee8dbace2caedddb235f833558319f99b7b",
+    "count" : 2
+  }, {
+    "source" : "commit_a48788bea7dabfb2dad62e8211731d2ca9b91505",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "commit_a48788bea7dabfb2dad62e8211731d2ca9b91505",
+    "count" : 2
+  }, {
+    "source" : "commit_a48788bea7dabfb2dad62e8211731d2ca9b91505",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "commit_a48788bea7dabfb2dad62e8211731d2ca9b91505",
+    "count" : 2
+  }, {
+    "source" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 8
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "count" : 8
+  }, {
+    "source" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 8
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "count" : 8
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 24
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 24
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 21
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 21
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 7
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "count" : 7
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 21
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_6b939b4eaf9ee7d3076e4a89e38106dc67e3dd46",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "commit_6b939b4eaf9ee7d3076e4a89e38106dc67e3dd46",
+    "count" : 4
+  }, {
+    "source" : "commit_a48788bea7dabfb2dad62e8211731d2ca9b91505",
+    "target" : "[backend/app.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "commit_a48788bea7dabfb2dad62e8211731d2ca9b91505",
+    "count" : 2
+  }, {
+    "source" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "target" : "[backend/app.js]",
+    "count" : 8
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "count" : 8
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[backend/app.js]",
+    "count" : 24
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[backend/app.js]",
+    "count" : 21
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "target" : "[backend/app.js]",
+    "count" : 7
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "count" : 7
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 21
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_2825894601dd5acb9c065eab0decc073efbe4870",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "commit_2825894601dd5acb9c065eab0decc073efbe4870",
+    "count" : 2
+  }, {
+    "source" : "commit_2dd3e8d4e8484328480b7e15ab65c8c941e866a9",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "commit_2dd3e8d4e8484328480b7e15ab65c8c941e866a9",
+    "count" : 5
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 21
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 8
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "count" : 8
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 24
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 21
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "target" : "[backend/util/database.js]",
+    "count" : 8
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "count" : 8
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[backend/util/database.js]",
+    "count" : 24
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[backend/util/database.js]",
+    "count" : 21
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 7
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "commit_9a974399fb30c04e672e9fabd957738eb9e6137d",
+    "count" : 7
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 21
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 8
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "count" : 8
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 24
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 21
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_2dd3e8d4e8484328480b7e15ab65c8c941e866a9",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "commit_2dd3e8d4e8484328480b7e15ab65c8c941e866a9",
+    "count" : 5
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 21
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 8
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "commit_2465b0e59e80f6315bb4c423c83a5308d5cf4892",
+    "count" : 8
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 24
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 21
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "commit_3dfc98e55e80e1962fd06d39c46d37fe1d837b05",
+    "count" : 21
+  }, {
+    "source" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 11
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "count" : 11
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_638b1047af68acbe51865dd4e4c65ac8ae6dbb9d",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "commit_638b1047af68acbe51865dd4e4c65ac8ae6dbb9d",
+    "count" : 5
+  }, {
+    "source" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 11
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "count" : 11
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 11
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "commit_cc39282e2fb01fb6978ff5977496306d41fcd148",
+    "count" : 11
+  }, {
+    "source" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 24
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "commit_08a1032ca5d2e16001f3308b1d9a2ee864682c5d",
+    "count" : 24
+  }, {
+    "source" : "commit_3a1b948335a3266454701899c26d13800e9cb0eb",
+    "target" : "[frontend/src/components/Map/path.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/path.jsx]",
+    "target" : "commit_3a1b948335a3266454701899c26d13800e9cb0eb",
+    "count" : 2
+  } ]
+}
+
+    const maxNodeSize = gData.nodes.map(n => n.size).reduce((a, b) => Math.max(a, b));
+    const maxCount = gData.links.map(l => l.count).reduce((a, b) => Math.max(a, b));
+
+    gData.links = gData.links.map(l => {
+        return {source: l.target, target: l.source, count: l.count}
+    });
+    const colorOf = (node) => {
+        if (!node.id.startsWith("[")) return "rgba(135, 206, 235, 0.6)";
+        return "rgba(100,100,100,0.6)";
+    }
+
+    const elem = document.getElementById('graph');
+    const Graph = ForceGraph()(elem)
+        .graphData(gData)
+        .nodeRelSize(4)
+        .nodeVal(n => Math.max(20 * n.size / maxNodeSize, 0.001))
+        .nodeLabel(n => n.id + " (" + n.size + ")")
+        .nodeColor(n => colorOf(n))
+        .linkDirectionalParticles(1)
+        .linkDirectionalParticleSpeed(d => d.count / maxCount * 0.01)
+        .linkOpacity(0.1)
+        .linkWidth(d => 3 * d.count / maxCount + 0.1);
+
+</script>
+</body>

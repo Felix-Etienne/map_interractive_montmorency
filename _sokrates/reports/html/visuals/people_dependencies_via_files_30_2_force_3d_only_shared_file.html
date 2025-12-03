@@ -1,0 +1,137 @@
+<head>
+    <style> body {
+        margin: 0;
+    } </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/3d-force-graph"></script>
+</head>
+
+<body>
+<div id="3d-graph"></div>
+
+<script>
+    const gData = {
+  "nodes" : [ {
+    "id" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "size" : 2
+  }, {
+    "id" : "marioaldiaz05@gmail.com",
+    "size" : 5
+  }, {
+    "id" : "fe.hamel06@gmail.com",
+    "size" : 11
+  }, {
+    "id" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/Map/Map.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/Map/svgFiles/bloc-L/deuxieme.jsx]",
+    "size" : 2
+  } ],
+  "links" : [ {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 10
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 10
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 10
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 10
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/deuxieme.jsx]",
+    "count" : 9
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/deuxieme.jsx]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 9
+  }, {
+    "source" : "marioaldiaz05@gmail.com",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/deuxieme.jsx]",
+    "count" : 7
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/deuxieme.jsx]",
+    "target" : "marioaldiaz05@gmail.com",
+    "count" : 7
+  }, {
+    "source" : "marioaldiaz05@gmail.com",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 7
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "marioaldiaz05@gmail.com",
+    "count" : 7
+  }, {
+    "source" : "marioaldiaz05@gmail.com",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "marioaldiaz05@gmail.com",
+    "count" : 6
+  }, {
+    "source" : "marioaldiaz05@gmail.com",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "marioaldiaz05@gmail.com",
+    "count" : 5
+  }, {
+    "source" : "marioaldiaz05@gmail.com",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "marioaldiaz05@gmail.com",
+    "count" : 4
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 4
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 3
+  } ]
+}
+
+    const maxNodeSize = gData.nodes.map(n => n.size).reduce((a, b) => Math.max(a, b));
+    const maxCount = gData.links.map(l => l.count).reduce((a, b) => Math.max(a, b));
+
+    gData.links = gData.links.map(l => { return {source: l.target, target: l.source, count: l.count} });
+
+    const Graph = ForceGraph3D()
+    (document.getElementById('3d-graph'))
+        .graphData(gData)
+        .nodeRelSize(4)
+        .nodeVal(n => Math.max(20 * n.size / maxNodeSize, 0.001))
+        .nodeLabel(n => n.id + " (" + n.size + ")")
+        .nodeColor(n => n.id.startsWith("[") ? "skyblue" : "")
+        .linkDirectionalParticles(6)
+        .linkDirectionalParticleSpeed(d => d.count / maxCount * 0.01)
+        .linkOpacity(0.1)
+        .linkWidth(d => 3 * d.count / maxCount + 0.1);
+
+</script>
+</body>

@@ -1,0 +1,8 @@
+Path	Lines of Code
+backend/app.js	27
+backend/controllers/class-controller.js	27
+backend/controllers/student-controller.js	135
+backend/middlewares/error-handler.js	8
+backend/routes/class-routes.js	7
+backend/routes/student-routes.js	11
+backend/util/database.js	13

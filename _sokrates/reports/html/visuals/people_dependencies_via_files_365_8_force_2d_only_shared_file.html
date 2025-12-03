@@ -1,0 +1,1013 @@
+<head>
+    <style> body {
+        margin: 0;
+    } </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/force-graph"></script>
+</head>
+
+<body>
+<div id="graph"></div>
+
+<script>
+    const gData = {
+  "nodes" : [ {
+    "id" : "[backend/package.json]",
+    "size" : 3
+  }, {
+    "id" : "[backend/.env]",
+    "size" : 2
+  }, {
+    "id" : "marioaldiaz05@gmail.com",
+    "size" : 5
+  }, {
+    "id" : "[frontend/src/components/Header/Header.css]",
+    "size" : 3
+  }, {
+    "id" : "[backend/routes/class-routes.js]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "size" : 3
+  }, {
+    "id" : "[frontend/src/Images/ImageMap.png]",
+    "size" : 2
+  }, {
+    "id" : "[Style/style.css]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "size" : 3
+  }, {
+    "id" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/App.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/Header/Header.jsx]",
+    "size" : 3
+  }, {
+    "id" : "[test.html]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/vite.config.js]",
+    "size" : 2
+  }, {
+    "id" : "150173079+felix-etienne@users.noreply.github.com",
+    "size" : 40
+  }, {
+    "id" : "[frontend/src/main.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/Map/Map.css]",
+    "size" : 3
+  }, {
+    "id" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[backend/package-lock.json]",
+    "size" : 3
+  }, {
+    "id" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/Map/svgFiles/bloc-L/deuxieme.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[Style/enhanced-style.css]",
+    "size" : 2
+  }, {
+    "id" : "[map.js]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "size" : 3
+  }, {
+    "id" : "[frontend/src/components/App.css]",
+    "size" : 2
+  }, {
+    "id" : "2396524@cmontmorency.qc.ca",
+    "size" : 9
+  }, {
+    "id" : "[frontend/src/components/Map/Map.jsx]",
+    "size" : 4
+  }, {
+    "id" : "[frontend/index.html]",
+    "size" : 2
+  }, {
+    "id" : "[backend/routes/student-routes.js]",
+    "size" : 3
+  }, {
+    "id" : "[backend/controllers/student-controller.js]",
+    "size" : 3
+  }, {
+    "id" : "[Images/PXL_20250911_185122495.png]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[Vue/vueUser.html]",
+    "size" : 2
+  }, {
+    "id" : "fe.hamel06@gmail.com",
+    "size" : 47
+  }, {
+    "id" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "size" : 2
+  }, {
+    "id" : "2396547@cmontmorency.qc.ca",
+    "size" : 7
+  }, {
+    "id" : "[.gitignore]",
+    "size" : 3
+  }, {
+    "id" : "[backend/app.js]",
+    "size" : 3
+  }, {
+    "id" : "[frontend/src/index.css]",
+    "size" : 3
+  }, {
+    "id" : "[backend/middlewares/error-handler.js]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/package-lock.json]",
+    "size" : 2
+  }, {
+    "id" : "[backend/util/database.js]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/.env]",
+    "size" : 2
+  }, {
+    "id" : "[backend/controllers/class-controller.js]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/package.json]",
+    "size" : 2
+  }, {
+    "id" : "[backend/README.md]",
+    "size" : 2
+  } ],
+  "links" : [ {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 14
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 14
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 10
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 10
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/deuxieme.jsx]",
+    "count" : 9
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/deuxieme.jsx]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 9
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 8
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 8
+  }, {
+    "source" : "marioaldiaz05@gmail.com",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/deuxieme.jsx]",
+    "count" : 7
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/deuxieme.jsx]",
+    "target" : "marioaldiaz05@gmail.com",
+    "count" : 7
+  }, {
+    "source" : "marioaldiaz05@gmail.com",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 7
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "marioaldiaz05@gmail.com",
+    "count" : 7
+  }, {
+    "source" : "marioaldiaz05@gmail.com",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "marioaldiaz05@gmail.com",
+    "count" : 6
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 6
+  }, {
+    "source" : "marioaldiaz05@gmail.com",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "marioaldiaz05@gmail.com",
+    "count" : 5
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 5
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 5
+  }, {
+    "source" : "marioaldiaz05@gmail.com",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "marioaldiaz05@gmail.com",
+    "count" : 4
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 4
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/index.html]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 4
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 4
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/index.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 4
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 4
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 3
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/package-lock.json]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/package-lock.json]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 3
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/package.json]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/package.json]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/index.html]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/index.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[.gitignore]",
+    "count" : 3
+  }, {
+    "source" : "[.gitignore]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[backend/.env]",
+    "count" : 3
+  }, {
+    "source" : "[backend/.env]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[backend/README.md]",
+    "count" : 3
+  }, {
+    "source" : "[backend/README.md]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[backend/app.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[backend/app.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[backend/package-lock.json]",
+    "count" : 3
+  }, {
+    "source" : "[backend/package-lock.json]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[backend/package.json]",
+    "count" : 3
+  }, {
+    "source" : "[backend/package.json]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[backend/util/database.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/.env]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/.env]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/.env]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/.env]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 3
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[test.html]",
+    "count" : 3
+  }, {
+    "source" : "[test.html]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 3
+  }, {
+    "source" : "2396524@cmontmorency.qc.ca",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "2396524@cmontmorency.qc.ca",
+    "count" : 2
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/package-lock.json]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/package-lock.json]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 2
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/package.json]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/package.json]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 2
+  }, {
+    "source" : "2396524@cmontmorency.qc.ca",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "2396524@cmontmorency.qc.ca",
+    "count" : 2
+  }, {
+    "source" : "2396524@cmontmorency.qc.ca",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "2396524@cmontmorency.qc.ca",
+    "count" : 2
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 2
+  }, {
+    "source" : "2396524@cmontmorency.qc.ca",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "2396524@cmontmorency.qc.ca",
+    "count" : 2
+  }, {
+    "source" : "2396524@cmontmorency.qc.ca",
+    "target" : "[frontend/src/index.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "2396524@cmontmorency.qc.ca",
+    "count" : 2
+  }, {
+    "source" : "2396547@cmontmorency.qc.ca",
+    "target" : "[.gitignore]",
+    "count" : 2
+  }, {
+    "source" : "[.gitignore]",
+    "target" : "2396547@cmontmorency.qc.ca",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[.gitignore]",
+    "count" : 2
+  }, {
+    "source" : "[.gitignore]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[backend/.env]",
+    "count" : 2
+  }, {
+    "source" : "[backend/.env]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "2396547@cmontmorency.qc.ca",
+    "target" : "[backend/README.md]",
+    "count" : 2
+  }, {
+    "source" : "[backend/README.md]",
+    "target" : "2396547@cmontmorency.qc.ca",
+    "count" : 2
+  }, {
+    "source" : "2396547@cmontmorency.qc.ca",
+    "target" : "[backend/app.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "2396547@cmontmorency.qc.ca",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "2396547@cmontmorency.qc.ca",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "2396547@cmontmorency.qc.ca",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "2396547@cmontmorency.qc.ca",
+    "target" : "[backend/package-lock.json]",
+    "count" : 2
+  }, {
+    "source" : "[backend/package-lock.json]",
+    "target" : "2396547@cmontmorency.qc.ca",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[backend/package-lock.json]",
+    "count" : 2
+  }, {
+    "source" : "[backend/package-lock.json]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "2396547@cmontmorency.qc.ca",
+    "target" : "[backend/package.json]",
+    "count" : 2
+  }, {
+    "source" : "[backend/package.json]",
+    "target" : "2396547@cmontmorency.qc.ca",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[backend/package.json]",
+    "count" : 2
+  }, {
+    "source" : "[backend/package.json]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "2396547@cmontmorency.qc.ca",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "2396547@cmontmorency.qc.ca",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[backend/util/database.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/Images/ImageMap.png]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Images/ImageMap.png]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/Images/ImageMap.png]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Images/ImageMap.png]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "2396524@cmontmorency.qc.ca",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "2396524@cmontmorency.qc.ca",
+    "count" : 2
+  }, {
+    "source" : "2396524@cmontmorency.qc.ca",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "2396524@cmontmorency.qc.ca",
+    "count" : 2
+  }, {
+    "source" : "2396524@cmontmorency.qc.ca",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "2396524@cmontmorency.qc.ca",
+    "count" : 2
+  }, {
+    "source" : "2396524@cmontmorency.qc.ca",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "2396524@cmontmorency.qc.ca",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 2
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[Images/PXL_20250911_185122495.png]",
+    "count" : 2
+  }, {
+    "source" : "[Images/PXL_20250911_185122495.png]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[Images/PXL_20250911_185122495.png]",
+    "count" : 2
+  }, {
+    "source" : "[Images/PXL_20250911_185122495.png]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[Style/enhanced-style.css]",
+    "count" : 2
+  }, {
+    "source" : "[Style/enhanced-style.css]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[Style/enhanced-style.css]",
+    "count" : 2
+  }, {
+    "source" : "[Style/enhanced-style.css]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[Style/style.css]",
+    "count" : 2
+  }, {
+    "source" : "[Style/style.css]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[Style/style.css]",
+    "count" : 2
+  }, {
+    "source" : "[Style/style.css]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[Vue/vueUser.html]",
+    "count" : 2
+  }, {
+    "source" : "[Vue/vueUser.html]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[Vue/vueUser.html]",
+    "count" : 2
+  }, {
+    "source" : "[Vue/vueUser.html]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[map.js]",
+    "count" : 2
+  }, {
+    "source" : "[map.js]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 2
+  }, {
+    "source" : "fe.hamel06@gmail.com",
+    "target" : "[map.js]",
+    "count" : 2
+  }, {
+    "source" : "[map.js]",
+    "target" : "fe.hamel06@gmail.com",
+    "count" : 2
+  }, {
+    "source" : "150173079+felix-etienne@users.noreply.github.com",
+    "target" : "[test.html]",
+    "count" : 2
+  }, {
+    "source" : "[test.html]",
+    "target" : "150173079+felix-etienne@users.noreply.github.com",
+    "count" : 2
+  } ]
+}
+
+    const maxNodeSize = gData.nodes.map(n => n.size).reduce((a, b) => Math.max(a, b));
+    const maxCount = gData.links.map(l => l.count).reduce((a, b) => Math.max(a, b));
+
+    gData.links = gData.links.map(l => {
+        return {source: l.target, target: l.source, count: l.count}
+    });
+    const colorOf = (node) => {
+        if (!node.id.startsWith("[")) return "rgba(135, 206, 235, 0.6)";
+        return "rgba(100,100,100,0.6)";
+    }
+
+    const elem = document.getElementById('graph');
+    const Graph = ForceGraph()(elem)
+        .graphData(gData)
+        .nodeRelSize(4)
+        .nodeVal(n => Math.max(20 * n.size / maxNodeSize, 0.001))
+        .nodeLabel(n => n.id + " (" + n.size + ")")
+        .nodeColor(n => colorOf(n))
+        .linkDirectionalParticles(1)
+        .linkDirectionalParticleSpeed(d => d.count / maxCount * 0.01)
+        .linkOpacity(0.1)
+        .linkWidth(d => 3 * d.count / maxCount + 0.1);
+
+</script>
+</body>

@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>function errorHandler()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">function errorHandler()</h3>
+<p style="margin-top: 4px">in <i>backend/middlewares/error-handler.js [1:9]</i></p>
+<ul>
+    <li><b>7</b> lines of code</li>
+    <li><b>4</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="js">
+function errorHandler(error, req, res, next) {
+  if (res.headersSent) {
+    return next(error);
+  }
+  //retourner le code d'erreur de l'erreur sinon 500 ( server)
+  res.status(error.code || 500);
+  //retourner le message d'erreur dans le corp de la reponse, sinon un message par defaut
+  res.json({ message: error.message || &quot;Une erreur inconnue est survenue !&quot; });
+}
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

@@ -137,9 +137,10 @@ export default function Map() {
     function clearCouleurs() {
         document.querySelectorAll(".salle, .corridor, .escalier")
             .forEach(el => {
-                el.style.fill = "";
+                el.style.fill = "#82c0ffff";
                 el.style.fillOpacity = "";
             });
+        setHighlightedPath([]);
     }
 
 
@@ -180,7 +181,7 @@ export default function Map() {
                     <button
                         onClick={() => {
                             setPathfindingMode(!pathfindingMode);
-                            if (!pathfindingMode) {
+                            if (pathfindingMode) {
                                 setSelectedPath({ start: null, end: null });
                                 clearCouleurs();
                             }
