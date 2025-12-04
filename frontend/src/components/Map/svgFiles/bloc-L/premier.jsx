@@ -121,7 +121,7 @@ export default function Premier({
         detectAutoPan={false}
         background="white"
       >
-        <svg viewBox="0 0 2592 1728" className="map" width="100%" height="100%">
+        <svg viewBox="0 0 2592 1728" className="map" width="100%" height="100%" id="map-svg">
           <svg
             className="map"
             width="100%"

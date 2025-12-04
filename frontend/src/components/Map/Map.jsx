@@ -2,6 +2,7 @@ import "./Map.css";
 import Premier from "./svgFiles/bloc-L/premier.jsx";
 import Deuxieme from "./svgFiles/bloc-L/deuxieme.jsx";
 import { useState, useEffect } from 'react';
+import exportSVGToPDF from "./mapToPDF.jsx";
 
 export default function Map() {
     const [level, setLevel] = useState("1");
@@ -197,7 +198,10 @@ export default function Map() {
                     )}
                 </div>
                 <div>
-                    <div className="map">{maps[level]}</div>
+                    <button onClick={() => exportSVGToPDF('#map-svg')}>
+                        Exporter la map en PDF
+                    </button>
+                    <div className="map" id="map-svg">{maps[level]}</div>
                 </div>
             </div>
         </>
