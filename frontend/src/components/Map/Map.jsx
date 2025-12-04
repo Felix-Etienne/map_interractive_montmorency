@@ -2,7 +2,7 @@ import "./Map.css";
 import Premier from "./svgFiles/bloc-L/premier.jsx";
 import Deuxieme from "./svgFiles/bloc-L/deuxieme.jsx";
 import { useState, useEffect } from 'react';
-import exportSVGToPDF from "./mapToPDF.jsx";
+import exportBothSVGToPDF from "./mapToPDF.jsx";
 
 export default function Map() {
     const [level, setLevel] = useState("1");
@@ -17,6 +17,8 @@ export default function Map() {
         start: null,
         end: null
     });
+    const [selectedClasses, setSelectedClasses] = useState([]);
+    const [classFilter, setClassFilter] = useState("");
 
 
     const mapGraphique = {
@@ -57,7 +59,13 @@ export default function Map() {
         // Wait for the SVG to be rendered
         setTimeout(() => {
             const positions = {};
-            document.querySelectorAll(".corridor, .escalier").forEach(el => {
+            const container = document.getElementById('map-svg');
+            if (!container) {
+                setNodePositions(positions);
+                return;
+            }
+
+            container.querySelectorAll(".corridor, .escalier").forEach(el => {
                 const id = el.id;
                 if (!id) return;
                 // getBBox works for SVG elements
@@ -66,17 +74,17 @@ export default function Map() {
                     x: bbox.x + bbox.width / 2,
                     y: bbox.y + bbox.height / 2
                 };
-
             });
-            document.querySelectorAll(".salle").forEach(el => {
+
+            container.querySelectorAll(".salle").forEach(el => {
                 const id = el.id;
                 if (!id) return;
                 positions[id] = {
                     x: nodePositionsTest[id]?.x,
                     y: nodePositionsTest[id]?.y
                 };
-
             });
+
             setNodePositions(positions);
         }, 100);
     }, [level, windowSize]);
@@ -112,13 +120,32 @@ export default function Map() {
             }
         }
 
-        const elements = document.querySelectorAll(".salle, .corridor, .escalier");
+        const container = document.getElementById('map-svg');
+        const elements = container ? container.querySelectorAll(".salle, .corridor, .escalier") : [];
         elements.forEach(el => el.addEventListener("click", handleClick));
 
         return () => {
             elements.forEach(el => el.removeEventListener("click", handleClick));
         };
     }, [pathfindingMode, selectedPath, level]);
+
+    // Apply highlights for selected classes (multi-select)
+    useEffect(() => {
+        const container = document.getElementById('map-svg');
+        const all = container ? container.querySelectorAll('.salle') : [];
+        all.forEach(el => {
+            const id = el.id;
+            if (selectedClasses.includes(id)) {
+                el.setAttribute('stroke', 'orange');
+                el.setAttribute('stroke-width', '6');
+            } else {
+                // reset to default appearance
+                el.setAttribute('fill', '#82c0ffff');
+                el.removeAttribute('stroke');
+                el.removeAttribute('stroke-width');
+            }
+        });
+    }, [selectedClasses, level]);
 
     const maps = {
         1: <Premier
@@ -136,11 +163,12 @@ export default function Map() {
     };
 
     function clearCouleurs() {
-        document.querySelectorAll(".salle, .corridor, .escalier")
-            .forEach(el => {
-                el.style.fill = "#82c0ffff";
-                el.style.fillOpacity = "";
-            });
+        const container = document.getElementById('map-svg');
+        const els = container ? container.querySelectorAll(".salle, .corridor, .escalier") : [];
+        els.forEach(el => {
+            el.style.fill = "#82c0ffff";
+            el.style.fillOpacity = "";
+        });
         setHighlightedPath([]);
     }
 
@@ -165,6 +193,10 @@ export default function Map() {
         }
         return null;
     }
+    function mapinvisible(maps) {
+        // Return the opposite map (the inactive one) so it's available in the DOM
+        return level === "1" ? maps[2] : maps[1];
+    }
 
     return (
         <>
@@ -177,7 +209,6 @@ export default function Map() {
                     <option value="1">1er Étage</option>
                     <option value="2">2em Étage</option>
                 </select>
-
                 <div className="pathfinding-controls">
                     <button
                         onClick={() => {
@@ -198,13 +229,45 @@ export default function Map() {
                     )}
                 </div>
                 <div>
-                    <button onClick={() => exportSVGToPDF('#map-svg')}>
-                        Exporter la map en PDF
-                    </button>
                     <div className="map" id="map-svg">{maps[level]}</div>
+
                 </div>
+                <div className="multi-select-classes" style={{ marginTop: 12 }}>
+                    <label style={{ display: 'block', marginBottom: 6 }}>Sélectionner des classes à surligner :</label>
+                    <input
+                        type="text"
+                        placeholder="Rechercher une classe..."
+                        value={classFilter}
+                        onChange={(e) => setClassFilter(e.target.value)}
+                        style={{ padding: '6px 8px', width: 240, marginBottom: 6 }}
+                    />
+                    <div style={{ maxHeight: 160, overflow: 'auto', border: '1px solid #cae9fa', padding: 8, width: 260, background: '#cae9fa', marginLeft: 'auto', marginRight: 'auto' }}>
+                        {Object.keys(mapGraphique)
+                            .filter(k => k.startsWith('L'))
+                            .filter(k => k.toLowerCase().includes(classFilter.toLowerCase()))
+                            .map(id => (
+                                <div key={id} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                    <input
+                                        type="checkbox"
+                                        checked={selectedClasses.includes(id)}
+                                        onChange={(e) => {
+                                            if (e.target.checked) setSelectedClasses(prev => [...prev, id]);
+                                            else setSelectedClasses(prev => prev.filter(x => x !== id));
+                                        }}
+                                    />
+                                    <label style={{ userSelect: 'none' }}>{id}</label>
+                                </div>
+                            ))}
+                    </div>
+                    <div style={{ marginTop: 8, marginLeft: 'auto', marginRight: 'auto' }}>
+                        <button onClick={() => setSelectedClasses([])} style={{ padding: '6px 10px' }}>Effacer</button>
+                        <button onClick={() => exportBothSVGToPDF()} style={{ padding: '6px 10px' }}>Exporter sélection en PDF</button>
+                    </div>
+                </div>
+                <div className="map2" id="map-svg2" style={{ display: "none" }}>{mapinvisible(maps)}</div>
             </div>
         </>
     );
 
 }
+
