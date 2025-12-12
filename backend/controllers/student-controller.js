@@ -10,7 +10,7 @@ const getAllStudents = async (req, res, next) => {
     if (result.err) {
       throw err;
     }
-    res.status(200).json(result);
+    res.status(200).json(result.data);
   } catch (err) {
     next(err);
   }
