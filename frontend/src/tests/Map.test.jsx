@@ -9,7 +9,7 @@ afterEach(() => {
 });
 
 describe("Map", () => {
-  it("shows", () => {
+  it("S'affiche", () => {
     render(<Map />);
     expect(
       screen.getByText(/Voici la Map interactive du college Montmorency :/i)

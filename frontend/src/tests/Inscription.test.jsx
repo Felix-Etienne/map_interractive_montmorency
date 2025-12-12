@@ -9,7 +9,7 @@ afterEach(() => {
 });
 
 describe("Inscription", () => {
-  it("shows Not logged in when no token", () => {
+  it("S'affiche", () => {
     render(<Inscription />);
     expect(
       screen.getByText(/Veuillez entrer vos informations de connexion :/i)

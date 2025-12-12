@@ -2,21 +2,22 @@ import express from "express";
 import dotenv from "dotenv";
 import pool from "./util/database.js";
 import errorHandler from "./middlewares/error-handler.js";
-import  connectDB  from "./util/database.js";
+import connectDB from "./util/database.js";
 
-import classRoutes from "./routes/class-routes.js"
+import classRoutes from "./routes/class-routes.js";
 import studentRoutes from "./routes/student-routes.js";
 
 import { createClient } from "@supabase/supabase-js";
 
 dotenv.config();
 
+//db pass = sfepVu1DP5hJWHEm
 // const db = await createClient(process.env.DB_URL,process.env.DB_KEY);
 connectDB();
-  // console.log(db);
+// console.log(db);
 const app = express();
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 
 app.use(express.json());
 
@@ -31,8 +32,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
-
 // const get = async ({req,res}) => {
 //   const query = "SELECT * FROM classes";
 
@@ -41,7 +40,7 @@ app.use((req, res, next) => {
 // }
 // //Routes
 app.use("/api/class", classRoutes);
-app.use("/api/students",studentRoutes);
+app.use("/api/students", studentRoutes);
 
 // app.get("/hello", async( req, res, next) => {
 //   const query = "SELECT * FROM classes";
