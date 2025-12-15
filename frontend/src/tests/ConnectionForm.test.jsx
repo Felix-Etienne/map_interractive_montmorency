@@ -1,16 +1,33 @@
-// import React from "react";
-// import { render, screen, cleanup } from "@testing-library/react";
-// import { afterEach, describe, it, expect } from "vitest";
-// import ConnectionForm from "../components/ConnectionForm/ConnectionForm";
+import { afterEach, describe, it, expect, vi } from "vitest";
 
-// afterEach(() => {
-//   cleanup();
-//   localStorage.clear();
-// });
+const mockedUsedNavigate = vi.fn();
 
-// describe("ConnectionForm", () => {
-//   it("S'affiche", () => {
-//     render(<ConnectionForm />);
-//     expect(screen.getByText(/Connection Utilisateur/i)).toBeInTheDocument();
-//   });
-// });
+vi.doMock("react-router-dom", async () => ({
+  ...(await vi.importOriginal("react-router-dom")),
+  useNavigate: () => mockedUsedNavigate,
+}));
+
+import { render, screen, cleanup } from "@testing-library/react";
+import ConnectionForm from "../components/ConnectionForm/ConnectionForm";
+import { AuthContext } from "../components/AuthContext/AuthContext";
+import { BrowserRouter } from "react-router-dom";
+
+beforeEach(() => {
+  mockedUsedNavigate.mockClear();
+});
+
+afterEach(() => {
+  cleanup();
+  localStorage.clear();
+});
+
+describe("ConnectionForm", () => {
+  it("S'affiche", async () => {
+    await render(
+      <BrowserRouter>
+        <ConnectionForm />
+      </BrowserRouter>
+    );
+    expect(screen.getByText(/Connection Utilisateur/i)).toBeInTheDocument();
+  });
+});
