@@ -15,5 +15,7 @@ jobs:
         node-version: 18
     - name: Install dependencies
       run: npm install 
+    - name: Install Specific dependencies 
+      run: npm install vite vitest @vitejs/plugin-react react @testing-library/react
     - name: Run unit tests
       run: npx vitest
