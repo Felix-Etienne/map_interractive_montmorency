@@ -20,7 +20,7 @@ export default function Map() {
     const [selectedClasses, setSelectedClasses] = useState([]);
     const [classFilter, setClassFilter] = useState("");
 
-
+    // Graph representation of the building for pathfinding
     const mapGraphique = {
         "L1756": ["C-L-1-2"],
         "L1758": ["C-L-1-2"],
