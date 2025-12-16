@@ -90,3 +90,27 @@ When("I click the export PDF button", () => {
 Then("the PDF generation should complete successfully", () => {
   cy.exec('ls cypress/downloads').its('stdout').should('not.be.empty');
 });
+
+
+// Search for a classroom
+When("I search for {string}", (searchTerm) => {
+  cy.get('input.search-input')
+    .first()
+    .clear()
+    .type(searchTerm);
+  cy.wait(500); // Wait for results to filter
+});
+
+// Verify search results appear with specific class
+Then("I should see search results containing {string}", (className) => {
+  cy.get('ul.results-list').should('be.visible');
+  cy.get('ul.results-list li.result-item').should('contain', className);
+});
+
+// Click on a specific search result
+When("I click on the search result {string}", (className) => {
+  cy.get('ul.results-list li.result-item')
+    .contains(className)
+    .click();
+  cy.wait(500); // Wait for popup to appear
+});
