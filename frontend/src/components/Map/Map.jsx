@@ -21,6 +21,7 @@ export default function Map() {
     const [classFilter, setClassFilter] = useState("");
 
 
+    // Map graphique pour le pathfinding probablement à améliorer plus tard
     const mapGraphique = {
         "L1756": ["C-L-1-2"],
         "L1758": ["C-L-1-2"],
