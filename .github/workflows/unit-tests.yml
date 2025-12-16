@@ -1,0 +1,19 @@
+name: Unit Tests with Vitest
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ’18’
+    - name: Install dependencies
+      run: npm install vite vitest vitest/config @vitejs/plugin-react react @testing-library/react
+    - name: Run unit tests
+      run: npx vitest
