@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>frontend/src/components/ConnectionForm/ConnectionForm.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">frontend/src/components/ConnectionForm/ConnectionForm.jsx (<b>75</b> lines of code) (<a href="ConnectionForm.jsx">raw</a>):</h3>
+<div id="editor">import &quot;./ConnectionForm.css&quot;;
+import { useState, useContext } from &quot;react&quot;;
+import { useNavigate } from &quot;react-router&quot;;
+import { AuthContext } from &quot;../AuthContext/AuthContext&quot;;
+
+export default function ConnectionForm() {
+    const navigate = useNavigate();
+    const [couriel, setCouriel] = useState(&quot;&quot;);
+    const [password, setPassword] = useState(&quot;&quot;);
+
+    const auth = useContext(AuthContext);
+
+    async function authSubmitHandler(event) {
+        if (couriel != &quot;&quot; &amp;&amp; password != &quot;&quot;) {
+            event.preventDefault();
+            const data = {
+                email: couriel,
+                password: password,
+            };
+            console.log(data);
+            try {
+                const response = await fetch(
+                    import.meta.env.VITE_BACKEND_URL + &quot;api/students/login&quot;,
+                    {
+                        method: &quot;POST&quot;,
+                        headers: {
+                            &quot;Content-Type&quot;: &quot;application/json&quot;,
+                        },
+                        body: JSON.stringify(data),
+                    }
+                );
+                console.log(response);
+                const responseData = await response.json();
+                if (!response.ok) {
+                    throw new Error(responseData.message || &quot;Une erreur est survenue.&quot;);
+                }
+                auth.login(responseData.nom, responseData.userId, responseData.token);
+                navigate(&quot;/&quot;);
+            } catch (err) {
+                setError(
+                    err.message || &quot;Une erreur est survenue lors de l'inscription.&quot;
+                );
+                console.error(err);
+            } finally {
+                navigate(&quot;/&quot;);
+            }
+        } else {
+            alert(&quot;Veuillez remplir tous les champs.&quot;);
+        }
+    }
+
+    return (
+        &lt;div className=&quot;inscription-container&quot;&gt;
+            &lt;h1&gt;Connection Utilisateur&lt;/h1&gt;
+            &lt;p&gt;Veuillez entrer vos informations de connexion :&lt;/p&gt;
+            &lt;form className=&quot;login-form&quot;&gt;
+                &lt;div className=&quot;control&quot;&gt;
+                    &lt;label&gt;Email : &lt;/label&gt;
+                    &lt;input
+                        id=&quot;couriel&quot;
+                        value={couriel}
+                        onChange={(e) =&gt; setCouriel(e.target.value)}
+                    /&gt;
+                &lt;/div&gt;
+                &lt;div className=&quot;control&quot;&gt;
+                    &lt;label htmlFor=&quot;password&quot;&gt;Password : &lt;/label&gt;
+                    &lt;input
+                        id=&quot;password&quot;
+                        value={password}
+                        onChange={(e) =&gt; setPassword(e.target.value)}
+                    /&gt;
+                &lt;/div&gt;
+                &lt;button className=&quot;login-button&quot; onClick={authSubmitHandler}&gt;
+                    Se connecter
+                &lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    );
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

@@ -1,0 +1,12 @@
+file 1	file 2	# same commits	# commits file 1	# commits file 2
+frontend/src/components/Map/svgFiles/bloc-L/premier.jsx	frontend/src/components/Map/Map.jsx	8	15	20
+frontend/src/components/SearchBar/SearchBar.jsx	frontend/src/components/Map/svgFiles/bloc-L/premier.jsx	5	8	15
+frontend/src/components/SearchBar/SearchBar.jsx	frontend/src/components/SearchBar/SearchBar.css	5	8	5
+frontend/src/components/SearchBar/SearchBar.css	frontend/src/components/Map/Map.jsx	4	5	20
+frontend/src/components/SearchBar/SearchBar.jsx	frontend/src/components/Map/Map.jsx	4	8	20
+frontend/src/components/SearchBar/SearchBar.css	frontend/src/components/Map/svgFiles/bloc-L/premier.jsx	2	5	15
+frontend/src/components/Header/Header.css	frontend/src/components/Map/Map.jsx	1	8	20
+frontend/src/components/Map/svgFiles/bloc-L/premier.jsx	frontend/src/components/Map/path.jsx	1	15	1
+frontend/src/components/Header/Header.jsx	frontend/src/components/Map/Map.jsx	1	10	20
+frontend/src/components/Header/Header.jsx	frontend/src/components/Header/Header.css	1	10	8
+frontend/src/components/Map/path.jsx	frontend/src/components/Map/Map.jsx	1	1	20

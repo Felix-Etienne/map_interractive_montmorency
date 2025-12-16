@@ -3,9 +3,9 @@ import "./Header.css";
 import { Link, Outlet } from "react-router-dom";
 import { AuthContext } from "../AuthContext/AuthContext";
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import CurrentUser from "../CurrentUser/CurrentUser";
-
+import image from "../../Images/Client_LogoLogin.png";
 
 export default function Header() {
   const auth = useContext(AuthContext);
@@ -21,17 +21,16 @@ export default function Header() {
     <>
       <header className="header">
         <div className="header-titre">
-
           <Link to="/">
-            <h1 className="header-title">Map Interactive Collège Montmorency</h1>
+            <img className="logo" src={image} alt="Logo Collège Montmorency" />
           </Link>
           {!auth.isLoggedIn ? (
             <div className="boutton-inscri">
               <Link to="/inscription">
-                <button >Inscription</button>
+                <button>Inscription</button>
               </Link>
               <Link to="/connection">
-                <button >Connection</button>
+                <button>Connection</button>
               </Link>
             </div>
           ) : (
@@ -40,8 +39,6 @@ export default function Header() {
               <button onClick={authSubmitHandler}>Déconnection</button>
             </div>
           )}
-
-
         </div>
       </header>
       <main className="main">

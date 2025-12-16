@@ -1,0 +1,2593 @@
+<head>
+    <style> body {
+        margin: 0;
+    } </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/force-graph"></script>
+</head>
+
+<body>
+<div id="graph"></div>
+
+<script>
+    const gData = {
+  "nodes" : [ {
+    "id" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "size" : 24
+  }, {
+    "id" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "size" : 3
+  }, {
+    "id" : "[frontend/src/components/Header/Header.css]",
+    "size" : 24
+  }, {
+    "id" : "[backend/routes/class-routes.js]",
+    "size" : 24
+  }, {
+    "id" : "[frontend/src/components/App.css]",
+    "size" : 24
+  }, {
+    "id" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "size" : 3
+  }, {
+    "id" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "size" : 24
+  }, {
+    "id" : "[frontend/src/components/Map/path.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/Map/Map.jsx]",
+    "size" : 28
+  }, {
+    "id" : "[frontend/index.html]",
+    "size" : 24
+  }, {
+    "id" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "size" : 24
+  }, {
+    "id" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "size" : 24
+  }, {
+    "id" : "[backend/routes/student-routes.js]",
+    "size" : 24
+  }, {
+    "id" : "[backend/controllers/student-controller.js]",
+    "size" : 24
+  }, {
+    "id" : "[frontend/src/components/App.jsx]",
+    "size" : 24
+  }, {
+    "id" : "[frontend/src/components/Header/Header.jsx]",
+    "size" : 24
+  }, {
+    "id" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "size" : 24
+  }, {
+    "id" : "[frontend/vite.config.js]",
+    "size" : 24
+  }, {
+    "id" : "[frontend/src/main.jsx]",
+    "size" : 24
+  }, {
+    "id" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "size" : 4
+  }, {
+    "id" : "[frontend/src/components/Map/Map.css]",
+    "size" : 24
+  }, {
+    "id" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "size" : 24
+  }, {
+    "id" : "[backend/app.js]",
+    "size" : 24
+  }, {
+    "id" : "[frontend/src/index.css]",
+    "size" : 24
+  }, {
+    "id" : "[backend/middlewares/error-handler.js]",
+    "size" : 24
+  }, {
+    "id" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "size" : 24
+  }, {
+    "id" : "[backend/util/database.js]",
+    "size" : 24
+  }, {
+    "id" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "size" : 24
+  }, {
+    "id" : "[backend/controllers/class-controller.js]",
+    "size" : 24
+  } ],
+  "links" : [ {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 8
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 8
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 7
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 7
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 6
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/index.html]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/index.html]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/index.html]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/index.html]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/index.html]",
+    "count" : 4
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[backend/app.js]",
+    "count" : 4
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/index.html]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 4
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 4
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 4
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[backend/app.js]",
+    "count" : 4
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 4
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[backend/app.js]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 4
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[backend/util/database.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[backend/app.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/index.html]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[backend/app.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 3
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[backend/util/database.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/index.html]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[backend/util/database.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[backend/app.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[backend/util/database.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[backend/app.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[backend/app.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[backend/util/database.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 3
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[backend/app.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 3
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[backend/app.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 3
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[backend/app.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[backend/app.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[backend/util/database.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/index.html]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/index.html]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 3
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[backend/util/database.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[backend/app.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[backend/util/database.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[backend/app.js]",
+    "count" : 3
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[backend/app.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/index.html]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/index.html]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/index.html]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[backend/util/database.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[backend/util/database.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[backend/app.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[backend/util/database.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/index.html]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[backend/util/database.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/index.html]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/index.html]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[backend/util/database.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/index.html]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[backend/util/database.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/index.html]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[backend/util/database.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/index.html]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[backend/util/database.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[backend/util/database.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[backend/util/database.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[backend/util/database.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 2
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[backend/util/database.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 2
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/index.html]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[backend/app.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[backend/app.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[backend/app.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[backend/app.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.jsx]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/src/components/App.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/index.html]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/src/components/Insriptions/Inscription.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/index.html]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[backend/util/database.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/src/index.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/index.css]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/index.html]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/index.html]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/index.html]",
+    "target" : "[backend/app.js]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 2
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/src/components/Map/Map.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.css]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[backend/util/database.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[backend/util/database.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[backend/app.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[backend/app.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[backend/app.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/app.js]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/path.jsx]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/Map/path.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[backend/util/database.js]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[backend/util/database.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/Containers/ErrorPage.jsx]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/src/components/CurrentUser/CurrentUser.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.jsx]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/controllers/student-controller.js]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[backend/controllers/student-controller.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.css]",
+    "count" : 1
+  }, {
+    "source" : "[backend/routes/class-routes.js]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[backend/routes/class-routes.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/main.jsx]",
+    "target" : "[backend/controllers/class-controller.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/controllers/class-controller.js]",
+    "target" : "[frontend/src/main.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/AuthContext/AuthContext.css]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/vite.config.js]",
+    "target" : "[backend/middlewares/error-handler.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/middlewares/error-handler.js]",
+    "target" : "[frontend/vite.config.js]",
+    "count" : 1
+  }, {
+    "source" : "[backend/routes/student-routes.js]",
+    "target" : "[frontend/src/components/App.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/App.css]",
+    "target" : "[backend/routes/student-routes.js]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "[frontend/src/components/Map/path.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/path.jsx]",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  } ]
+}
+
+    const maxNodeSize = gData.nodes.map(n => n.size).reduce((a, b) => Math.max(a, b));
+    const maxCount = gData.links.map(l => l.count).reduce((a, b) => Math.max(a, b));
+
+    gData.links = gData.links.map(l => {
+        return {source: l.target, target: l.source, count: l.count}
+    });
+    const colorOf = (node) => {
+        if (!node.id.startsWith("[")) return "rgba(135, 206, 235, 0.6)";
+        return "rgba(100,100,100,0.6)";
+    }
+
+    const elem = document.getElementById('graph');
+    const Graph = ForceGraph()(elem)
+        .graphData(gData)
+        .nodeRelSize(4)
+        .nodeVal(n => Math.max(20 * n.size / maxNodeSize, 0.001))
+        .nodeLabel(n => n.id + " (" + n.size + ")")
+        .nodeColor(n => colorOf(n))
+        .linkDirectionalParticles(1)
+        .linkDirectionalParticleSpeed(d => d.count / maxCount * 0.01)
+        .linkOpacity(0.1)
+        .linkWidth(d => 3 * d.count / maxCount + 0.1);
+
+</script>
+</body>

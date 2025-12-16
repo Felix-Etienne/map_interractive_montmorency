@@ -1,0 +1,137 @@
+<html>
+<head>
+    <title>frontend/src/components/Insriptions/Inscription.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">frontend/src/components/Insriptions/Inscription.jsx (<b>102</b> lines of code) (<a href="Inscription.jsx">raw</a>):</h3>
+<div id="editor">import &quot;./Inscription.css&quot;;
+import { useState } from &quot;react&quot;;
+import { useNavigate } from &quot;react-router&quot;;
+
+
+export default function Inscription() {
+    const navigate = useNavigate();
+    const [nom, setNom] = useState(&quot;&quot;);
+    const [password, setPassword] = useState(&quot;&quot;);
+    const [couriel, setCouriel] = useState(&quot;&quot;);
+
+    const nomRegex = /^[a-zA-Z0-9]{3,}$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+    async function authSubmitHandler(event) {
+        if (checkerNom()) {
+            if (nom != &quot;&quot; &amp;&amp; password != &quot;&quot;) {
+                event.preventDefault();
+                const data = {
+                    username: nom,
+                    email: couriel,
+                    password: password,
+                };
+                try {
+                    console.log(data);
+                    const response = await fetch(
+                        import.meta.env.VITE_BACKEND_URL + &quot;api/students&quot;,
+                        {
+                            method: &quot;POST&quot;,
+                            headers: {
+                                &quot;Content-Type&quot;: &quot;application/json&quot;,
+                            },
+                            body: JSON.stringify(data),
+                        }
+                    );
+
+                    const responseData = await response.json();
+                    console.log(responseData);
+                    navigate(&quot;/connection&quot;);
+                } catch (err) {
+                    setError(
+                        err.message || &quot;Une erreur est survenue lors de l'inscription.&quot;
+                    );
+                    console.error(err);
+                } finally {
+
+                }
+            }
+        }
+    }
+    const checkerNom = () =&gt; {
+        if (nomRegex.test(nom)) {
+            if (checkerPassword() === true) {
+                return true;
+            }
+        } else {
+            alert(&quot;Veuillez remplir le champ nom avec au minimum 3 caract&egrave;res&quot;);
+            return false;
+        }
+    };
+    const checkerPassword = () =&gt; {
+        if (passwordRegex.test(password)) {
+            return true;
+        } else {
+            alert(
+                &quot;Veuillez remplir le champ mot de passe avec au minimum 8 caract&egrave;res, une lettre et au moins 1 chiffre&quot;
+            );
+            return false;
+        }
+    };
+
+
+    return (
+        &lt;div className=&quot;inscription-container&quot;&gt;
+            &lt;h1&gt;Inscription&lt;/h1&gt;
+            &lt;p&gt;Veuillez entrer vos informations de connexion :&lt;/p&gt;
+            &lt;form className=&quot;login-form&quot;&gt;
+                &lt;div className=&quot;form-group&quot;&gt;
+                    &lt;div className=&quot;control&quot;&gt;
+                        &lt;label&gt;Username : &lt;/label&gt;
+                        &lt;input
+                            id=&quot;user&quot;
+                            value={nom}
+                            onChange={(e) =&gt; setNom(e.target.value)}
+                        /&gt;
+                    &lt;/div&gt;
+                    &lt;div className=&quot;control&quot;&gt;
+                        &lt;label&gt;Email : &lt;/label&gt;
+                        &lt;input
+                            id=&quot;couriel&quot;
+                            value={couriel}
+                            onChange={(e) =&gt; setCouriel(e.target.value)}
+                        /&gt;
+                    &lt;/div&gt;
+                    &lt;div className=&quot;control&quot;&gt;
+                        &lt;label htmlFor=&quot;password&quot;&gt;Password : &lt;/label&gt;
+                        &lt;input
+                            id=&quot;password&quot;
+                            value={password}
+                            onChange={(e) =&gt; setPassword(e.target.value)}
+                        /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+
+                &lt;button className=&quot;login-button&quot; onClick={authSubmitHandler}&gt;
+                    S'inscrire
+                &lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    );
+}</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

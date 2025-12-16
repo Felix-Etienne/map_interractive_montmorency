@@ -1,0 +1,230 @@
+<html>
+<head>
+    <title>frontend/src/components/Map/Map.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">frontend/src/components/Map/Map.jsx (<b>179</b> lines of code) (<a href="Map.jsx">raw</a>):</h3>
+<div id="editor">import &quot;./Map.css&quot;;
+import Premier from &quot;./svgFiles/bloc-L/premier.jsx&quot;;
+import Deuxieme from &quot;./svgFiles/bloc-L/deuxieme.jsx&quot;;
+import { useState, useEffect } from 'react';
+
+export default function Map() {
+    const [level, setLevel] = useState(&quot;1&quot;);
+    const [highlightedPath, setHighlightedPath] = useState([]);
+    const [windowSize, setWindowSize] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight
+    });
+
+    const [pathfindingMode, setPathfindingMode] = useState(false);
+    const [selectedPath, setSelectedPath] = useState({
+        start: null,
+        end: null
+    });
+
+
+    const mapGraphique = {
+        &quot;L1756&quot;: [&quot;C-L-1-2&quot;],
+        &quot;L1758&quot;: [&quot;C-L-1-2&quot;],
+        &quot;L1760&quot;: [&quot;C-L-1-2&quot;],
+        &quot;L1762&quot;: [&quot;C-L-1-2&quot;],
+        &quot;L2750&quot;: [&quot;C-L-2-1&quot;],
+        &quot;L2752&quot;: [&quot;C-L-2-1&quot;],
+        &quot;L2756&quot;: [&quot;C-L-2-1&quot;],
+        &quot;L2760&quot;: [&quot;C-L-2-1&quot;],
+        &quot;L1222&quot;: [&quot;C-L-1-1&quot;],
+        &quot;T1&quot;: [&quot;C-L-2-1&quot;],
+        &quot;T2&quot;: [&quot;C-L-2-1&quot;],
+        &quot;C-L-1-1&quot;: [&quot;C-L-1-2&quot;, &quot;L1222&quot;],
+        &quot;C-L-1-2&quot;: [&quot;L1756&quot;, &quot;L1758&quot;, &quot;L1760&quot;, &quot;L1762&quot;, &quot;C-L-1-1&quot;, &quot;E-L-1-1&quot;, &quot;E-L-1-2&quot;],
+        &quot;C-L-2-1&quot;: [&quot;L2750&quot;, &quot;L2752&quot;, &quot;L2756&quot;, &quot;L2760&quot;, &quot;E-L-2-1&quot;, &quot;E-L-2-2&quot;, &quot;T1&quot;, &quot;T2&quot;],
+        &quot;E-L-1-1&quot;: [&quot;C-L-1-2&quot;, &quot;E-L-2-1&quot;],
+        &quot;E-L-1-2&quot;: [&quot;C-L-1-2&quot;, &quot;E-L-2-2&quot;],
+        &quot;E-L-2-1&quot;: [&quot;E-L-1-1&quot;, &quot;C-L-2-1&quot;],
+        &quot;E-L-2-2&quot;: [&quot;E-L-1-2&quot;, &quot;C-L-2-1&quot;],
+    };
+    const nodePositionsTest = {
+        &quot;L1756&quot;: { x: 970, y: 1130 },
+        &quot;L1758&quot;: { x: 740, y: 1250 },
+        &quot;L1760&quot;: { x: 1035, y: 1250 },
+        &quot;L1762&quot;: { x: 1330, y: 1250 },
+
+        &quot;L2750&quot;: { x: 970, y: 1130 },
+        &quot;L2752&quot;: { x: 740, y: 1250 },
+        &quot;L2756&quot;: { x: 1035, y: 1250 },
+        &quot;L2760&quot;: { x: 1330, y: 1250 },
+    };
+    const [nodePositions, setNodePositions] = useState({});
+
+    // TESTING PURPOSES -- Set les points de chaque place automatiquement
+    useEffect(() =&gt; {
+        // Wait for the SVG to be rendered
+        setTimeout(() =&gt; {
+            const positions = {};
+            document.querySelectorAll(&quot;.corridor, .escalier&quot;).forEach(el =&gt; {
+                const id = el.id;
+                if (!id) return;
+                // getBBox works for SVG elements
+                const bbox = el.getBBox();
+                positions[id] = {
+                    x: bbox.x + bbox.width / 2,
+                    y: bbox.y + bbox.height / 2
+                };
+
+            });
+            document.querySelectorAll(&quot;.salle&quot;).forEach(el =&gt; {
+                const id = el.id;
+                if (!id) return;
+                positions[id] = {
+                    x: nodePositionsTest[id]?.x,
+                    y: nodePositionsTest[id]?.y
+                };
+
+            });
+            setNodePositions(positions);
+        }, 100);
+    }, [level, windowSize]);
+
+
+    useEffect(() =&gt; {
+        function handleResize() {
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight
+            });
+        }
+        window.addEventListener('resize', handleResize);
+        return () =&gt; window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() =&gt; {
+        function handleClick(e) {
+            if (!pathfindingMode) return;
+
+            const el = e.currentTarget;
+            if (!selectedPath.start) {
+                setSelectedPath(prev =&gt; ({ ...prev, start: el.id }));
+                el.style.fill = &quot;#4CAF50&quot;;
+            } else if (!selectedPath.end) {
+                setSelectedPath(prev =&gt; ({ ...prev, end: el.id }));
+                el.style.fill = &quot;#F44336&quot;;
+
+                const path = trouverPath(mapGraphique, selectedPath.start, el.id);
+                if (path) {
+                    setHighlightedPath(path);
+                }
+            }
+        }
+
+        const elements = document.querySelectorAll(&quot;.salle, .corridor, .escalier&quot;);
+        elements.forEach(el =&gt; el.addEventListener(&quot;click&quot;, handleClick));
+
+        return () =&gt; {
+            elements.forEach(el =&gt; el.removeEventListener(&quot;click&quot;, handleClick));
+        };
+    }, [pathfindingMode, selectedPath, level]);
+
+    const maps = {
+        1: &lt;Premier
+            width={windowSize.width * 0.5}
+            height={windowSize.height * 0.7}
+            highlightedPath={highlightedPath}
+            nodePositions={nodePositions}
+        /&gt;,
+        2: &lt;Deuxieme
+            width={windowSize.width * 0.5}
+            height={windowSize.height * 0.7}
+            highlightedPath={highlightedPath}
+            nodePositions={nodePositions}
+        /&gt;,
+    };
+
+    function clearCouleurs() {
+        document.querySelectorAll(&quot;.salle, .corridor, .escalier&quot;)
+            .forEach(el =&gt; {
+                el.style.fill = &quot;&quot;;
+                el.style.fillOpacity = &quot;&quot;;
+            });
+    }
+
+
+    function trouverPath(graph, debut, fin) {
+        const queue = [[debut]];
+        const visiter = new Set();
+
+        while (queue.length &gt; 0) {
+            const path = queue.shift();
+            const node = path[path.length - 1];
+
+            if (node === fin) return path;
+
+            if (!visiter.has(node)) {
+                visiter.add(node);
+
+                for (const neighbor of graph[node] || []) {
+                    queue.push([...path, neighbor]);
+                }
+            }
+        }
+        return null;
+    }
+
+    return (
+        &lt;&gt;
+            &lt;div className=&quot;map-container&quot;&gt;
+                &lt;p&gt;Voici la Map interactive du college Montmorency : &lt;/p&gt;
+                &lt;select
+                    value={level}
+                    onChange={(e) =&gt; setLevel(e.target.value)}
+                &gt;
+                    &lt;option value=&quot;1&quot;&gt;1er &Eacute;tage&lt;/option&gt;
+                    &lt;option value=&quot;2&quot;&gt;2em &Eacute;tage&lt;/option&gt;
+                &lt;/select&gt;
+
+                &lt;div className=&quot;pathfinding-controls&quot;&gt;
+                    &lt;button
+                        onClick={() =&gt; {
+                            setPathfindingMode(!pathfindingMode);
+                            if (!pathfindingMode) {
+                                setSelectedPath({ start: null, end: null });
+                                clearCouleurs();
+                            }
+                        }}
+                    &gt;
+                        {pathfindingMode ? &quot;Annuler Navigation&quot; : &quot;Trouver un chemin&quot;}
+                    &lt;/button&gt;
+                    {pathfindingMode &amp;&amp; (
+                        &lt;div className=&quot;path-info&quot;&gt;
+                            &lt;p&gt;D&eacute;part: {selectedPath.start || &quot;Non s&eacute;lectionn&eacute;&quot;}&lt;/p&gt;
+                            &lt;p&gt;Arriv&eacute;e: {selectedPath.end || &quot;Non s&eacute;lectionn&eacute;&quot;}&lt;/p&gt;
+                        &lt;/div&gt;
+                    )}
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;div className=&quot;map&quot;&gt;{maps[level]}&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/&gt;
+    );
+
+}</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

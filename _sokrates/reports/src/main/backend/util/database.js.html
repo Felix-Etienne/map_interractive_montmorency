@@ -1,0 +1,88 @@
+<html>
+<head>
+    <title>backend/util/database.js</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">backend/util/database.js (<b>13</b> lines of code) (<a href="database.js">raw</a>):</h3>
+<div id="editor">// import pg from &quot;pg&quot;;
+import dotenv from &quot;dotenv&quot;;
+import { createClient } from &quot;@supabase/supabase-js&quot;;
+
+dotenv.config();
+
+let isConnected = false;
+let db;
+
+const connectDB = async() =&gt; {
+  if (!isConnected) {
+    db = await createClient(process.env.DB_URL,process.env.DB_KEY);
+    isConnected = true;
+  }
+  return db;
+}
+
+
+// // const db = new pg.Pool({
+// //   user: process.env.DB_USER,
+// //   host: process.env.DB_HOST,
+// //   database: process.env.DB_NAME,
+// //   password: process.env.DB_PASSWORD,
+// //   port: process.env.DB_PORT
+// // });
+// // dotenv.config();
+
+// // console.log(process.env.DB_USER);
+// // console.log(process.env.DB_HOST);
+// // console.log(process.env.DB_PASSWORD);
+
+
+
+// // db.connect( () =&gt; {
+// //   console.log(&quot;Connection sql etablie&quot;);
+// // });
+// dotenv.config();
+// let isConnected = false;
+// // console.log(process.env);
+// const db = new pg.Pool({
+//   user: process.env.DB_USER,
+//   host: process.env.DB_HOST,
+//   database: process.env.DB_NAME,
+//   password: process.env.DB_PASSWORD,
+//   port: process.env.DB_PORT
+// });
+
+
+// const connectDB = async () =&gt; {
+//   if (isConnected) return db;
+//   try {
+//     await db.connect( () =&gt; {
+//       console.log(&quot;Connection sql etablie&quot;);
+//     });
+//     isConnected = true;
+//   } catch (err) {
+//     console.error(err.message);
+//     process.exit(1);
+//   }
+//   return db;
+// }
+
+export default connectDB;</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

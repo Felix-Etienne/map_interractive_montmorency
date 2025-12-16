@@ -1,0 +1,36 @@
+duplicated block id: 1
+size: 15 cleaned lines of code
+in 2 files:
+ - frontend/src/components/ConnectionForm/ConnectionForm.jsx (57:73)
+ - frontend/src/components/Insriptions/Inscription.jsx (87:106)
+
+duplicated block id: 2
+size: 11 cleaned lines of code
+in 2 files:
+ - frontend/src/components/App.jsx (81:91)
+ - frontend/src/components/App.jsx (95:105)
+
+duplicated block id: 3
+size: 8 cleaned lines of code
+in 2 files:
+ - frontend/src/components/ConnectionForm/ConnectionForm.jsx (24:31)
+ - frontend/src/components/Insriptions/Inscription.jsx (28:35)
+
+duplicated block id: 4
+size: 6 cleaned lines of code
+in 2 files:
+ - frontend/src/components/ConnectionForm/ConnectionForm.jsx (39:44)
+ - frontend/src/components/Insriptions/Inscription.jsx (40:45)
+
+duplicated block id: 5
+size: 6 cleaned lines of code
+in 2 files:
+ - backend/controllers/student-controller.js (10:17)
+ - backend/controllers/student-controller.js (22:29)
+
+duplicated block id: 6
+size: 6 cleaned lines of code
+in 2 files:
+ - frontend/src/components/Map/path.jsx (55:60)
+ - frontend/src/components/Map/path.jsx (118:123)
+

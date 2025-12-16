@@ -1,0 +1,145 @@
+<head>
+    <style> body {
+        margin: 0;
+    } </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/3d-force-graph"></script>
+</head>
+
+<body>
+<div id="3d-graph"></div>
+
+<script>
+    const gData = {
+  "nodes" : [ {
+    "id" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "size" : 3
+  }, {
+    "id" : "[frontend/src/components/Map/path.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/Map/Map.jsx]",
+    "size" : 6
+  }, {
+    "id" : "[frontend/src/components/Header/Header.css]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/Header/Header.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "size" : 4
+  }, {
+    "id" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "size" : 3
+  } ],
+  "links" : [ {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 8
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 8
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 5
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 4
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "[frontend/src/components/Map/path.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/path.jsx]",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/path.jsx]",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "[frontend/src/components/Map/path.jsx]",
+    "count" : 1
+  } ]
+}
+
+    const maxNodeSize = gData.nodes.map(n => n.size).reduce((a, b) => Math.max(a, b));
+    const maxCount = gData.links.map(l => l.count).reduce((a, b) => Math.max(a, b));
+
+    gData.links = gData.links.map(l => { return {source: l.target, target: l.source, count: l.count} });
+
+    const Graph = ForceGraph3D()
+    (document.getElementById('3d-graph'))
+        .graphData(gData)
+        .nodeRelSize(4)
+        .nodeVal(n => Math.max(20 * n.size / maxNodeSize, 0.001))
+        .nodeLabel(n => n.id + " (" + n.size + ")")
+        .nodeColor(n => n.id.startsWith("[") ? "skyblue" : "")
+        .linkDirectionalParticles(6)
+        .linkDirectionalParticleSpeed(d => d.count / maxCount * 0.01)
+        .linkOpacity(0.1)
+        .linkWidth(d => 3 * d.count / maxCount + 0.1);
+
+</script>
+</body>

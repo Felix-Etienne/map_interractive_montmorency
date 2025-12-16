@@ -1,0 +1,80 @@
+graph G {
+    compound="true"
+    rankdir="TB"
+    bgcolor="white"
+    fontname="Tahoma"
+
+    node [
+        fixedsize="false"
+        fontname="Tahoma"
+        color="white"
+        fillcolor="deepskyblue2"
+        fontcolor="black"
+        shape="box"
+        style="filled"
+        penwidth="1.0"
+    ]
+    edge [
+        fontname="Arial"
+        color="#00688b"
+        fontcolor="black"
+        fontsize="12"
+        arrowsize="0.5"
+        penwidth="1.0"
+    ]
+
+
+
+
+    "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]" -- "[frontend/src/components/Map/Map.jsx]" [label=" 8 ", penwidth="8", color="#00688bDB"];
+    "[frontend/src/components/Header/Header.jsx]" -- "[frontend/src/components/Map/Map.jsx]" [label=" 7 ", penwidth="7", color="#00688bC9"];
+    "[frontend/src/components/Header/Header.jsx]" -- "[frontend/src/components/Header/Header.css]" [label=" 6 ", penwidth="6", color="#00688bB7"];
+    "[frontend/src/components/Insriptions/Inscription.jsx]" -- "[frontend/src/components/Header/Header.jsx]" [label=" 6 ", penwidth="6", color="#00688bB7"];
+    "[frontend/src/components/Insriptions/Inscription.jsx]" -- "[frontend/src/components/Insriptions/Inscription.css]" [label=" 6 ", penwidth="6", color="#00688bB7"];
+    "[frontend/src/index.css]" -- "[frontend/src/components/Header/Header.css]" [label=" 6 ", penwidth="6", color="#00688bB7"];
+    "[frontend/src/components/App.jsx]" -- "[frontend/src/components/Header/Header.jsx]" [label=" 6 ", penwidth="6", color="#00688bB7"];
+    "[frontend/src/index.css]" -- "[frontend/src/components/Map/Map.css]" [label=" 6 ", penwidth="6", color="#00688bB7"];
+    "[frontend/src/components/Map/Map.css]" -- "[frontend/src/components/Header/Header.css]" [label=" 6 ", penwidth="6", color="#00688bB7"];
+    "[frontend/src/components/SearchBar/SearchBar.jsx]" -- "[frontend/src/components/SearchBar/SearchBar.css]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/src/components/Header/Header.css]" -- "[frontend/src/components/Map/Map.jsx]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/index.html]" -- "[frontend/src/components/Map/Map.jsx]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/src/components/Insriptions/Inscription.jsx]" -- "[frontend/src/index.css]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/src/components/App.jsx]" -- "[frontend/src/components/Map/Map.jsx]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/src/components/Insriptions/Inscription.css]" -- "[frontend/src/components/ConnectionForm/ConnectionForm.css]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/src/components/Insriptions/Inscription.css]" -- "[frontend/src/components/Map/Map.css]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/src/components/Insriptions/Inscription.css]" -- "[frontend/src/components/Header/Header.css]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/src/components/Insriptions/Inscription.jsx]" -- "[frontend/src/components/App.jsx]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/src/components/Insriptions/Inscription.jsx]" -- "[frontend/src/components/Map/Map.css]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/src/components/Insriptions/Inscription.jsx]" -- "[frontend/src/components/Header/Header.css]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/src/components/SearchBar/SearchBar.jsx]" -- "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/src/components/Insriptions/Inscription.css]" -- "[frontend/src/components/Header/Header.jsx]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/src/components/Insriptions/Inscription.css]" -- "[frontend/src/index.css]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/src/components/Insriptions/Inscription.jsx]" -- "[frontend/src/components/ConnectionForm/ConnectionForm.css]" [label=" 5 ", penwidth="5", color="#00688bA5"];
+    "[frontend/index.html]" -- "[frontend/src/components/Header/Header.jsx]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/components/ConnectionForm/ConnectionForm.css]" -- "[frontend/src/components/Header/Header.jsx]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/components/Insriptions/Inscription.jsx]" -- "[frontend/src/components/Map/Map.jsx]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]" -- "[frontend/src/components/Header/Header.jsx]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/index.css]" -- "[frontend/index.html]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/components/App.jsx]" -- "[frontend/index.html]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/components/ConnectionForm/ConnectionForm.css]" -- "[frontend/src/index.css]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/index.html]" -- "[frontend/src/components/Header/Header.css]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[backend/controllers/student-controller.js]" -- "[backend/app.js]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/components/Map/Map.css]" -- "[frontend/index.html]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/components/ConnectionForm/ConnectionForm.css]" -- "[frontend/src/components/Header/Header.css]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/index.css]" -- "[frontend/src/components/Map/Map.jsx]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/components/SearchBar/SearchBar.css]" -- "[frontend/src/components/Map/Map.jsx]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/components/Map/Map.css]" -- "[frontend/src/components/Header/Header.jsx]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/components/Map/Map.css]" -- "[frontend/src/components/Map/Map.jsx]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/index.css]" -- "[frontend/src/components/Header/Header.jsx]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[backend/routes/student-routes.js]" -- "[backend/controllers/student-controller.js]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[backend/routes/student-routes.js]" -- "[backend/app.js]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/components/SearchBar/SearchBar.jsx]" -- "[frontend/src/components/Map/Map.jsx]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/components/ConnectionForm/ConnectionForm.jsx]" -- "[frontend/src/components/App.jsx]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/components/ConnectionForm/ConnectionForm.css]" -- "[frontend/src/components/Map/Map.css]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[backend/app.js]" -- "[frontend/src/components/Header/Header.jsx]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[frontend/src/components/Insriptions/Inscription.css]" -- "[frontend/src/components/App.jsx]" [label=" 4 ", penwidth="4", color="#00688b93"];
+    "[backend/util/database.js]" -- "[frontend/src/components/Header/Header.css]" [label=" 3 ", penwidth="3", color="#00688b82"];
+    "[frontend/src/components/Insriptions/Inscription.jsx]" -- "[backend/app.js]" [label=" 3 ", penwidth="3", color="#00688b82"];
+    "[frontend/src/components/CurrentUser/CurrentUser.jsx]" -- "[frontend/src/components/Header/Header.jsx]" [label=" 3 ", penwidth="3", color="#00688b82"];
+
+}

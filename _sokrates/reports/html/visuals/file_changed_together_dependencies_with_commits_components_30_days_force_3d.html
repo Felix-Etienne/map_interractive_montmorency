@@ -1,0 +1,406 @@
+<head>
+    <style> body {
+        margin: 0;
+    } </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/3d-force-graph"></script>
+</head>
+
+<body>
+<div id="3d-graph"></div>
+
+<script>
+    const gData = {
+  "nodes" : [ {
+    "id" : "commit_ce94f2d302de5ca55c39154c875aafa6e1478cb1",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "size" : 5
+  }, {
+    "id" : "commit_fd2ff840439b7d6c06695b4984f3b9df078f68e6",
+    "size" : 2
+  }, {
+    "id" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "size" : 4
+  }, {
+    "id" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "size" : 4
+  }, {
+    "id" : "commit_3a1b948335a3266454701899c26d13800e9cb0eb",
+    "size" : 3
+  }, {
+    "id" : "commit_9b8d6785871d2d066669329199a9e71bef5b99c8",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/Header/Header.css]",
+    "size" : 1
+  }, {
+    "id" : "[frontend/src/components/Header/Header.jsx]",
+    "size" : 1
+  }, {
+    "id" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "size" : 11
+  }, {
+    "id" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "size" : 8
+  }, {
+    "id" : "commit_fed201bad79a2cfdaac3cdb7fa0a45d033f2913b",
+    "size" : 2
+  }, {
+    "id" : "[frontend/src/components/Map/path.jsx]",
+    "size" : 1
+  }, {
+    "id" : "[frontend/src/components/Map/Map.jsx]",
+    "size" : 11
+  }, {
+    "id" : "commit_51b4aee8dbace2caedddb235f833558319f99b7b",
+    "size" : 3
+  }, {
+    "id" : "commit_64a6200898b1275dc8e948d4e5c29a6ee34d03da",
+    "size" : 2
+  }, {
+    "id" : "commit_9e1be9eeb21385ee96bdcf74235f2bab8413ae1c",
+    "size" : 3
+  }, {
+    "id" : "commit_62b0e32ef305756e2d0054222cd49b3a4f5e2e0d",
+    "size" : 3
+  }, {
+    "id" : "commit_bbb26ee6585bdd0164d04c2b313710530c9d6178",
+    "size" : 2
+  }, {
+    "id" : "commit_3645d00b0d2e57710419b8a8bf5f00f33d99d33d",
+    "size" : 2
+  }, {
+    "id" : "commit_56495984999ae8a2b95376a4aff781c865c617b8",
+    "size" : 2
+  }, {
+    "id" : "commit_da3c81d287f18474070d35f1f011368c41978ac7",
+    "size" : 2
+  } ],
+  "links" : [ {
+    "source" : "commit_da3c81d287f18474070d35f1f011368c41978ac7",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_da3c81d287f18474070d35f1f011368c41978ac7",
+    "count" : 1
+  }, {
+    "source" : "commit_da3c81d287f18474070d35f1f011368c41978ac7",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_da3c81d287f18474070d35f1f011368c41978ac7",
+    "count" : 1
+  }, {
+    "source" : "commit_fed201bad79a2cfdaac3cdb7fa0a45d033f2913b",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_fed201bad79a2cfdaac3cdb7fa0a45d033f2913b",
+    "count" : 1
+  }, {
+    "source" : "commit_fed201bad79a2cfdaac3cdb7fa0a45d033f2913b",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_fed201bad79a2cfdaac3cdb7fa0a45d033f2913b",
+    "count" : 1
+  }, {
+    "source" : "commit_fd2ff840439b7d6c06695b4984f3b9df078f68e6",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_fd2ff840439b7d6c06695b4984f3b9df078f68e6",
+    "count" : 1
+  }, {
+    "source" : "commit_fd2ff840439b7d6c06695b4984f3b9df078f68e6",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_fd2ff840439b7d6c06695b4984f3b9df078f68e6",
+    "count" : 1
+  }, {
+    "source" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "count" : 3
+  }, {
+    "source" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "count" : 3
+  }, {
+    "source" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "count" : 3
+  }, {
+    "source" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "count" : 3
+  }, {
+    "source" : "commit_9b8d6785871d2d066669329199a9e71bef5b99c8",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_9b8d6785871d2d066669329199a9e71bef5b99c8",
+    "count" : 1
+  }, {
+    "source" : "commit_9b8d6785871d2d066669329199a9e71bef5b99c8",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_9b8d6785871d2d066669329199a9e71bef5b99c8",
+    "count" : 1
+  }, {
+    "source" : "commit_bbb26ee6585bdd0164d04c2b313710530c9d6178",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_bbb26ee6585bdd0164d04c2b313710530c9d6178",
+    "count" : 1
+  }, {
+    "source" : "commit_bbb26ee6585bdd0164d04c2b313710530c9d6178",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_bbb26ee6585bdd0164d04c2b313710530c9d6178",
+    "count" : 1
+  }, {
+    "source" : "commit_3a1b948335a3266454701899c26d13800e9cb0eb",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_3a1b948335a3266454701899c26d13800e9cb0eb",
+    "count" : 2
+  }, {
+    "source" : "commit_3a1b948335a3266454701899c26d13800e9cb0eb",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_3a1b948335a3266454701899c26d13800e9cb0eb",
+    "count" : 2
+  }, {
+    "source" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "count" : 3
+  }, {
+    "source" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "count" : 3
+  }, {
+    "source" : "commit_56495984999ae8a2b95376a4aff781c865c617b8",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "commit_56495984999ae8a2b95376a4aff781c865c617b8",
+    "count" : 1
+  }, {
+    "source" : "commit_56495984999ae8a2b95376a4aff781c865c617b8",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_56495984999ae8a2b95376a4aff781c865c617b8",
+    "count" : 1
+  }, {
+    "source" : "commit_ce94f2d302de5ca55c39154c875aafa6e1478cb1",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "commit_ce94f2d302de5ca55c39154c875aafa6e1478cb1",
+    "count" : 1
+  }, {
+    "source" : "commit_ce94f2d302de5ca55c39154c875aafa6e1478cb1",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_ce94f2d302de5ca55c39154c875aafa6e1478cb1",
+    "count" : 1
+  }, {
+    "source" : "commit_3645d00b0d2e57710419b8a8bf5f00f33d99d33d",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "commit_3645d00b0d2e57710419b8a8bf5f00f33d99d33d",
+    "count" : 1
+  }, {
+    "source" : "commit_3645d00b0d2e57710419b8a8bf5f00f33d99d33d",
+    "target" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/Map/svgFiles/bloc-L/premier.jsx]",
+    "target" : "commit_3645d00b0d2e57710419b8a8bf5f00f33d99d33d",
+    "count" : 1
+  }, {
+    "source" : "commit_62b0e32ef305756e2d0054222cd49b3a4f5e2e0d",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "commit_62b0e32ef305756e2d0054222cd49b3a4f5e2e0d",
+    "count" : 2
+  }, {
+    "source" : "commit_62b0e32ef305756e2d0054222cd49b3a4f5e2e0d",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "commit_62b0e32ef305756e2d0054222cd49b3a4f5e2e0d",
+    "count" : 2
+  }, {
+    "source" : "commit_51b4aee8dbace2caedddb235f833558319f99b7b",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "commit_51b4aee8dbace2caedddb235f833558319f99b7b",
+    "count" : 2
+  }, {
+    "source" : "commit_51b4aee8dbace2caedddb235f833558319f99b7b",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "commit_51b4aee8dbace2caedddb235f833558319f99b7b",
+    "count" : 2
+  }, {
+    "source" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "commit_c95207259b7478fc01673376653a30b9d845a5d0",
+    "count" : 3
+  }, {
+    "source" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 3
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "commit_3106d984d0a87edabfcf06f29f398fe1f50fa728",
+    "count" : 3
+  }, {
+    "source" : "commit_64a6200898b1275dc8e948d4e5c29a6ee34d03da",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.jsx]",
+    "target" : "commit_64a6200898b1275dc8e948d4e5c29a6ee34d03da",
+    "count" : 1
+  }, {
+    "source" : "commit_64a6200898b1275dc8e948d4e5c29a6ee34d03da",
+    "target" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "count" : 1
+  }, {
+    "source" : "[frontend/src/components/SearchBar/SearchBar.css]",
+    "target" : "commit_64a6200898b1275dc8e948d4e5c29a6ee34d03da",
+    "count" : 1
+  }, {
+    "source" : "commit_62b0e32ef305756e2d0054222cd49b3a4f5e2e0d",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_62b0e32ef305756e2d0054222cd49b3a4f5e2e0d",
+    "count" : 2
+  }, {
+    "source" : "commit_51b4aee8dbace2caedddb235f833558319f99b7b",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_51b4aee8dbace2caedddb235f833558319f99b7b",
+    "count" : 2
+  }, {
+    "source" : "commit_9e1be9eeb21385ee96bdcf74235f2bab8413ae1c",
+    "target" : "[frontend/src/components/Header/Header.css]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.css]",
+    "target" : "commit_9e1be9eeb21385ee96bdcf74235f2bab8413ae1c",
+    "count" : 2
+  }, {
+    "source" : "commit_9e1be9eeb21385ee96bdcf74235f2bab8413ae1c",
+    "target" : "[frontend/src/components/Map/Map.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/Map.jsx]",
+    "target" : "commit_9e1be9eeb21385ee96bdcf74235f2bab8413ae1c",
+    "count" : 2
+  }, {
+    "source" : "commit_3a1b948335a3266454701899c26d13800e9cb0eb",
+    "target" : "[frontend/src/components/Map/path.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Map/path.jsx]",
+    "target" : "commit_3a1b948335a3266454701899c26d13800e9cb0eb",
+    "count" : 2
+  }, {
+    "source" : "commit_9e1be9eeb21385ee96bdcf74235f2bab8413ae1c",
+    "target" : "[frontend/src/components/Header/Header.jsx]",
+    "count" : 2
+  }, {
+    "source" : "[frontend/src/components/Header/Header.jsx]",
+    "target" : "commit_9e1be9eeb21385ee96bdcf74235f2bab8413ae1c",
+    "count" : 2
+  } ]
+}
+
+    const maxNodeSize = gData.nodes.map(n => n.size).reduce((a, b) => Math.max(a, b));
+    const maxCount = gData.links.map(l => l.count).reduce((a, b) => Math.max(a, b));
+
+    gData.links = gData.links.map(l => { return {source: l.target, target: l.source, count: l.count} });
+
+    const Graph = ForceGraph3D()
+    (document.getElementById('3d-graph'))
+        .graphData(gData)
+        .nodeRelSize(4)
+        .nodeVal(n => Math.max(20 * n.size / maxNodeSize, 0.001))
+        .nodeLabel(n => n.id + " (" + n.size + ")")
+        .nodeColor(n => n.id.startsWith("[") ? "skyblue" : "")
+        .linkDirectionalParticles(6)
+        .linkDirectionalParticleSpeed(d => d.count / maxCount * 0.01)
+        .linkOpacity(0.1)
+        .linkWidth(d => 3 * d.count / maxCount + 0.1);
+
+</script>
+</body>

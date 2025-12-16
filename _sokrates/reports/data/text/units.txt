@@ -1,0 +1,18 @@
+id: 1
+unit: function errorHandler()
+file: backend/middlewares/error-handler.js
+start line: 1
+end line: 9
+size: 7 LOC
+McCabe index: 4
+number of parameters: 4
+
+id: 2
+unit: export default defineConfig()
+file: frontend/vite.config.js
+start line: 5
+end line: 11
+size: 7 LOC
+McCabe index: 1
+number of parameters: 1
+
